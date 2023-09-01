@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef, useEffect, useState } from 'react'
 
+import { LoaderSpotify } from '@/assets/LoaderSpotify'
+
 import s from './Marquee.module.css'
 
 export function Marquee({
@@ -29,21 +31,25 @@ export function Marquee({
   }, [text])
 
   return (
-    <div ref={containerRef} className={`${s.marqueeContainer}`}>
+    <div ref={containerRef} className={s.marqueeContainer}>
       <div
-        className={
-          isTextExtraOverflowing ? s.extraMarque : isTextOverflowing ? s.marquee : s.offMarquee
-        }
+        className={`${
+          isTextExtraOverflowing
+            ? s.extraMarque
+            : isTextOverflowing
+            ? s.marquee
+            : `m-auto w-fit md:m-0`
+        }`}
       >
         <a
           className={`${
-            loading
-              ? 'w-full text-center md:text-start'
-              : ' border-b-2 border-transparent hover:border-black'
+            loading ? 'w-full text-center md:text-start' : 'link w-full text-center md:text-start'
           }`}
           href={loading ? undefined : link}
+          rel="noopener"
+          target="_blank"
         >
-          {loading ? 'Loading...' : text}
+          {loading ? <LoaderSpotify /> : text}
         </a>
       </div>
     </div>

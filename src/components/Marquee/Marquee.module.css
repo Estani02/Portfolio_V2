@@ -23,14 +23,6 @@
   /* padding: 0 10px 0 4px; */
 }
 
-.offMarquee {
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 @keyframes marquee {
   0%, 100% {
     transform: translateX(0);

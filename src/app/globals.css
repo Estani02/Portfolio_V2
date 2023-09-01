@@ -5,3 +5,18 @@
 *{
   box-sizing: border-box;
 }
+
+main{
+  background: rgb(18,10,66);
+background: radial-gradient(circle, rgba(18,10,66,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+@layer components {
+  .containerLink {
+    @apply hover:text-black hover:font-bold transition-colors duration-[0.25s] border-none bg-none w-fit md:hover:text-black;
+  }
+
+  .link {
+    @apply relative after:absolute after:w-full after:scale-x-0 after:h-[1.5px] after:bottom-0 after:left-0 after:bg-black after:md:bg-black after:origin-bottom-right after:transition-transform after:duration-[0.25s] after:ease-out hover:after:scale-x-150 hover:after:origin-bottom-left;
+  }
+}

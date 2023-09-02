@@ -6,7 +6,7 @@ import SpotifyWebApi from 'spotify-web-api-node'
 const api = new SpotifyWebApi({
   clientId: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT,
   clientSecret: process.env.NEXT_PUBLIC_SPOTIFY_SECRET,
-  redirectUri: 'http://localhost:3000/api/nowplaying',
+  redirectUri: process.env.NEXT_PUBLIC_SPOTIFY_REDIRECT,
 })
 
 export async function GET() {

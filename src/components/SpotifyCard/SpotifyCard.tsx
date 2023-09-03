@@ -20,7 +20,9 @@ export default function SpotifyCard() {
   )
 
   useEffect(() => {
-    // console.log(isLoading)
+    console.log(data)
+
+    console.log(isLoading)
   }, [data, isLoading])
 
   return (

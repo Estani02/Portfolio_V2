@@ -38,7 +38,7 @@ export function Marquee({
             ? s.extraMarque
             : isTextOverflowing
             ? s.marquee
-            : `m-auto w-fit md:m-0`
+            : `m-auto w-fit whitespace-nowrap md:m-0`
         }`}
       >
         <a

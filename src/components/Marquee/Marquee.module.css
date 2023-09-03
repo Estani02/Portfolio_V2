@@ -13,14 +13,12 @@
   white-space: nowrap;
   animation: marquee 25s infinite ;
   box-sizing: border-box;
-  /* padding: 0 10px 0 4px; */
 }
 
 .extraMarque{
   white-space: nowrap;
   animation: extramarquee 35s infinite ;
   box-sizing: border-box;
-  /* padding: 0 10px 0 4px; */
 }
 
 @keyframes marquee {

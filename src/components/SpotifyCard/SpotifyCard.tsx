@@ -5,7 +5,6 @@ import type { Track } from '@/interfaces'
 
 import axios from 'axios'
 import Image from 'next/image'
-import { useEffect } from 'react'
 import useSWR from 'swr'
 
 import noise from '@/assets/images/loading.gif'
@@ -18,11 +17,6 @@ export default function SpotifyCard() {
   const { data, isLoading } = useSWR('/api/nowplaying', (url) =>
     axios.get(url).then((res) => res.data as Track),
   )
-
-  useEffect(() => {
-    console.log(data)
-    console.log(isLoading)
-  }, [data, isLoading])
 
   return (
     <section className="flex w-full max-w-md flex-col items-center overflow-hidden rounded-2xl bg-white/30 p-4 pb-6 backdrop-blur-sm md:max-w-lg md:flex-col md:items-start">

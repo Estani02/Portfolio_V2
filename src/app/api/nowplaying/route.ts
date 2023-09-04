@@ -42,5 +42,7 @@ export async function GET() {
     return NextResponse.json(recentTracks.body.items[0].track)
   } catch (error) {
     console.log('Something went wrong!', error)
+
+    return NextResponse.json({ error: error })
   }
 }

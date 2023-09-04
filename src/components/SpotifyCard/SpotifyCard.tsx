@@ -35,7 +35,7 @@ export default function SpotifyCard() {
           <p
             className={`text-sm font-semibold text-[#0000005a] ${isLoading && 'text-transparent'}`}
           >
-            {isLoading ? 'Loading...' : data?.artists[0].name}
+            {isLoading ? 'Loading..' : data?.artists[0].name}
           </p>
           <PreviewSong song={data?.preview_url} />
         </div>

@@ -19,10 +19,10 @@
 
 .wave-menu li {
   list-style: none;
-  height: 20px;
+  height: 12.5px;
   width: 4px;
   border-radius: 10px;
-  background: #000;
+  background: #ffffffaf;
   margin: 0 6px;
   padding: 0;
   animation-name: wave1;
@@ -53,11 +53,6 @@
 .wave-menu li:nth-child(5) {
   animation-delay: 0.5s;
 }
-
-/* .wave-menu li:nth-child(6) {
-  animation-name: wave2;
-  animation-duration: 0.5s;
-} */
 
 .wave-menu li:nth-child(8) {
   animation-name: wave4;
@@ -107,5 +102,11 @@
 
   to {
     transform: scaleY(0.5);
+  }
+}
+
+@media (min-width: 768px) {
+  .wave-menu li{
+    height: 20px;
   }
 }

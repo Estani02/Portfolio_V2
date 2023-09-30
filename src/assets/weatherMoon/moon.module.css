@@ -1,0 +1,165 @@
+.container {
+  width: 125px;
+  height: 125px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloud {
+  width: 125px;
+}
+
+.front {
+  padding-top: 45px;
+  margin-left: 25px;
+  display: inline;
+  position: absolute;
+  z-index: 11;
+  animation: clouds 8s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.rightFrontMoon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50% 50% 50% 0%;
+  background-color: #7394b4;
+  display: inline-block;
+  margin-left: -12px;
+  z-index: 5;
+}
+
+.leftFrontMoon {
+  width: 33px;
+  height: 33px;
+  border-radius: 50% 50% 0% 50%;
+  background-color: #7394b4;
+  display: inline-block;
+  z-index: 5;
+}
+
+.moon {
+  width: 65px;
+  height: 65px;
+  background: -webkit-linear-gradient(to right, #ffffff, #040f2d);
+  background: linear-gradient(to right, #ffffff, #040f2d);
+  border-radius: 60px;
+  display: inline;
+  position: absolute;
+}
+
+.sunshine {
+  animation: sunshines 2s infinite;
+}
+
+.container li {
+	position: absolute;
+	list-style: none;
+	width: 3px;
+	height: 3px;
+	border-radius: 100%;
+	background-color:#fff;
+	transform: rotate(45deg);
+}
+
+.container li:nth-child(1) {
+  top:30%;
+  left:65%;
+}
+
+.container li:nth-child(2) {
+  top:35%;
+  left:53%;
+}
+
+.container li:nth-child(3) {
+  opacity: 0;
+  top:20%;
+  left:75%;
+  width:2px;
+  height: 2px;
+  animation: meteor 1.5s infinite linear;
+  animation-delay: 0.6s;
+}
+
+.container li:nth-child(4) {
+  top:5%;
+  left:50%;
+}
+
+.container li:nth-child(5) {
+  opacity: 0;
+  top:20%;
+  left:55%;
+  width:1px;
+  height: 15px;
+  animation: meteor 1.5s infinite linear;
+}
+
+@keyframes sunshines {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes clouds {
+  0% {
+    transform: translateX(15px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes meteor{
+    10%{
+      opacity: 1;
+    }
+    80%{
+      left:10%;
+      top:75%;
+      opacity: 0;
+    }
+}
+
+@media (min-width: 768px) {
+
+  .container{
+    width: 250px;
+    height: 250px;
+  }
+
+  .cloud{
+    width: 250px;
+  }
+
+  .leftFrontMoon{
+    width: 65px;
+    height: 65px;
+  }
+
+  .rightFrontMoon{
+    width: 45px;
+    height: 45px;
+    margin-left: -25px;
+  }
+
+  .moon {
+    width: 120px;
+    height: 120px;
+  }
+
+}

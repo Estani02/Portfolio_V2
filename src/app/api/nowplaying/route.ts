@@ -43,6 +43,6 @@ export async function GET() {
   } catch (error) {
     console.log('Something went wrong!', error)
 
-    return NextResponse.json({ error: error })
+    // return NextResponse.json({ error: error })
   }
 }

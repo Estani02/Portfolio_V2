@@ -19,22 +19,20 @@ export default function SpotifyCard() {
   )
 
   return (
-    <section className="flex w-full max-w-md flex-col items-center overflow-hidden rounded-2xl bg-white/30 p-4 pb-6 backdrop-blur-sm md:max-w-lg md:flex-col md:items-start">
-      <div className="flex flex-col items-center gap-2 md:flex-row md:items-start">
+    <section className="flex w-full max-w-md overflow-hidden rounded-2xl bg-white/20 px-2 py-3 text-[#ffffff77] shadow-2xl shadow-white/30 backdrop-blur-sm md:max-w-lg md:flex-col md:p-4 md:pb-6">
+      <div className="flex gap-2">
         <Image
           alt={data?.name || 'Song coverpage'}
-          className="h-[200px] w-[200px] object-cover"
-          height={200}
+          className="h-[100px] w-[100px] object-cover md:h-[150px] md:w-[150px]"
+          height={150}
           loading="lazy"
           src={data?.album.images[0].url || noise}
-          width={200}
+          width={150}
         />
-        <div className="flex flex-col items-center md:items-start">
-          <p className="text-lg font-bold text-[#0000005a]">Recently listened</p>
+        <div className="flex flex-col">
+          <p className="text-base font-bold md:text-lg">Recently listened</p>
           <Marquee link={data?.external_urls.spotify} loading={isLoading} text={data?.name} />
-          <p
-            className={`text-sm font-semibold text-[#0000005a] ${isLoading && 'text-transparent'}`}
-          >
+          <p className={`text-xs md:text-sm ${isLoading && 'text-transparent'}`}>
             {isLoading ? 'Loading..' : data?.artists[0].name}
           </p>
           <PreviewSong song={data?.preview_url} />

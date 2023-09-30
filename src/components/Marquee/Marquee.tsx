@@ -38,12 +38,12 @@ export function Marquee({
             ? s.extraMarque
             : isTextOverflowing
             ? s.marquee
-            : `m-auto w-fit whitespace-nowrap md:m-0`
+            : ` w-fit whitespace-nowrap md:m-0`
         }`}
       >
         <a
-          className={`${
-            loading ? 'w-full text-center md:text-start' : 'link w-full text-center md:text-start'
+          className={`text-white ${
+            loading ? 'w-full text-sm md:text-base' : 'link w-full text-sm md:text-base'
           }`}
           href={loading ? undefined : link}
           rel="noopener"

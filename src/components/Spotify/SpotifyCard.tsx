@@ -15,7 +15,7 @@ import { PreviewSong } from './PreviewSong'
 
 export default function SpotifyCard() {
   const { data, isLoading } = useSWR('/api/nowplaying', (url) =>
-    axios.get(url).then((res) => res.data as Track),
+    axios.post(url).then((res) => res.data as Track),
   )
 
   return (

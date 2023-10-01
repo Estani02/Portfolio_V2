@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
+'use client'
 import type { WeatherRoot } from '@/interfaces'
 
 import axios from 'axios'
@@ -12,7 +13,7 @@ import Moon from '@/assets/weatherMoon/Moon'
 
 function WeatherCard() {
   const { data, isLoading } = useSWR('/api/weather/es', (url) =>
-    axios.get(url).then((res) => res.data as WeatherRoot),
+    axios.post(url).then((res) => res.data as WeatherRoot),
   )
   
   const [isDaytime, setIsDaytime] = useState(true)

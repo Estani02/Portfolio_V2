@@ -9,7 +9,7 @@ const api = new SpotifyWebApi({
   redirectUri: process.env.NEXT_PUBLIC_SPOTIFY_REDIRECT,
 })
 
-export async function GET() {
+export async function POST() {
   try {
     api.setRefreshToken(process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN!)
 
@@ -42,6 +42,6 @@ export async function GET() {
   } catch (error) {
     console.log('Something went wrong!', error)
 
-    // return NextResponse.json({ error: error })
+    return Response.json({ error: error }, { status: 500 })
   }
 }

@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import type { Root } from '@/interfaces'
 
-import { NextResponse } from 'next/server'
 import SpotifyWebApi from 'spotify-web-api-node'
 
 const api = new SpotifyWebApi({
@@ -32,14 +31,14 @@ export async function GET() {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const dataRapidAPI = (await response.json()) as Promise<Root>
 
-        return NextResponse.json((await dataRapidAPI).tracks[0])
+        return Response.json((await dataRapidAPI).tracks[0])
       } catch (error) {
         console.log('Something went wrong in RapiApi!', error)
       }
     }
     console.log('Api')
 
-    return NextResponse.json(recentTracks.body.items[0].track)
+    return Response.json(recentTracks.body.items[0].track)
   } catch (error) {
     console.log('Something went wrong!', error)
 

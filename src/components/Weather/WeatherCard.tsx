@@ -11,9 +11,10 @@ import Sun from '@/assets/weatherSun/Sun'
 import Moon from '@/assets/weatherMoon/Moon'
 
 function WeatherCard() {
-  const { data, isLoading } = useSWR(`https://api.openweathermap.org/data/2.5/weather?q=cordoba,argentina&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=metric&&lang=es`, (url) =>
+  const { data, isLoading } = useSWR('/api/weather/es', (url) =>
     axios.get(url).then((res) => res.data as WeatherRoot),
   )
+  
   const [isDaytime, setIsDaytime] = useState(true)
   const [tempInt, setTempInt] = useState(0)
 
@@ -37,7 +38,7 @@ function WeatherCard() {
       ) : (
         <div className={`${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]'
         : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'}
-        flex w-full max-w-md overflow-hidden rounded-2xl bg-clip-padding p-6 text-white backdrop-blur-sm flex-row-reverse md:max-w-lg md:items-start`
+        flex w-full max-w-md justify-around overflow-hidden rounded-2xl bg-clip-padding p-6 text-white backdrop-blur-sm flex-row-reverse md:max-w-lg md:items-start`
         }>
         {/* <div> */}
           {isDaytime ? <Sun /> : <Moon />}

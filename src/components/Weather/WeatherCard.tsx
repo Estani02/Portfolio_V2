@@ -11,7 +11,7 @@ import Sun from '@/assets/weatherSun/Sun'
 import Moon from '@/assets/weatherMoon/Moon'
 
 function WeatherCard() {
-  const { data, isLoading } = useSWR('/api/weather/es', (url) =>
+  const { data, isLoading } = useSWR(`https://api.openweathermap.org/data/2.5/weather?q=cordoba,argentina&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=metric&&lang=es`, (url) =>
     axios.get(url).then((res) => res.data as WeatherRoot),
   )
   const [isDaytime, setIsDaytime] = useState(true)

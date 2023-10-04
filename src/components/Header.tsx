@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import React from 'react'
 
-function AbotMe() {
+import DeskAnimation from '@/assets/DeskAnimation/DeskAnimation'
+
+import Reveal from './Reveal/Reveal'
+
+function Header() {
   // const [confettiPaused, setConfettiPaused] = useState(false)
 
   // function hove() {
@@ -25,13 +29,14 @@ function AbotMe() {
   // }
 
   return (
-    <div className="flex h-[50vh] items-center justify-center text-center text-[2.5rem] font-bold md:text-[5rem]">
-      <div className="capitalize">
-        <h1>Hola.Soy Estanislao.</h1>
-        <span>Un desarrollador Full Stack</span>
+    <header className="flex h-[100vh] items-center justify-between font-bold">
+      <div className="flex flex-col gap-4 text-[2.5rem] capitalize lg:text-[5rem]">
+        <Reveal content="Estanislao Olmedo" />
+        <Reveal content="Desarrollador Full Stack" />
       </div>
-    </div>
+      <DeskAnimation />
+    </header>
   )
 }
 
-export default AbotMe
+export default Header

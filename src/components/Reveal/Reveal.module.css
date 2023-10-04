@@ -1,0 +1,58 @@
+.reveal {
+  position: relative;
+  width: fit-content;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.text {
+  color: #ffff;
+  opacity: 0;
+}
+
+@keyframes reveal-cover {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  44% {
+    width: 100%;
+    left: 0;
+  }
+  54% {
+    width: 102%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes reveal-text {
+  0% {
+    opacity: 0;
+  }
+  44% {
+    opacity: 0;
+  }
+  54% {
+    opacity: 1;
+  }
+}
+
+.reveal.loaded .cover {
+  animation: reveal-cover 1.5s ease-in-out;
+}
+
+.reveal.loaded .text {
+  opacity: 1;
+  animation: reveal-text 1.5s ease-in-out;
+}

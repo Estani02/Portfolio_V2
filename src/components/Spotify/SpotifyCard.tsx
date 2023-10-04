@@ -19,11 +19,12 @@ export default function SpotifyCard() {
   )
 
   return (
-    <section className="flex w-full max-w-md overflow-hidden rounded-2xl bg-white/20 px-2 py-3 text-[#ffffff77] shadow-2xl shadow-white/30 backdrop-blur-sm md:max-w-lg md:flex-col md:p-4 md:pb-6">
+    <section className="col-start-3 row-start-3 flex h-fit w-full max-w-md justify-center overflow-hidden rounded-2xl bg-gradient-to-tl from-[#cc2b5e]/30 to-[#753a88]/30 px-2 py-3 text-[#ffffff77] shadow-2xl shadow-white/30 backdrop-blur-sm md:max-w-lg md:flex-col md:p-4 md:pb-6">
       <div className="flex gap-2">
         <Image
           alt={data?.name || 'Song coverpage'}
           className="h-[100px] w-[100px] object-cover md:h-[150px] md:w-[150px]"
+          draggable="false"
           height={150}
           loading="lazy"
           src={data?.album.images[0].url || noise}

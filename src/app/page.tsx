@@ -7,13 +7,19 @@ import AboutMe from '@/components/AboutMe'
 import LinkedinCard from '@/components/LinkedinCard'
 import EmailCard from '@/components/EmailCard'
 import GitHubCard from '@/components/GitHubCard'
+import ProjectsCard from '@/components/ProjectsCard'
+import ThemesCard from '@/components/ThemesCard'
+import LanguagueCard from '@/components/LanguagueCard'
 
 export default function Home() {
   return (
     <main className="m-[50px] flex flex-col gap-[80px]">
       <Header />
-      <div className="grid w-full grid-cols-4 grid-rows-5 gap-8">
+      <ThemesCard />
+      <LanguagueCard />
+      <div className="grid w-full grid-cols-4 gap-8 md:grid-rows-5">
         <AboutMe />
+        <ProjectsCard />
         <LinkedinCard />
         <div className="row-start-2 grid max-h-[333px] grid-rows-2 gap-5">
           <EmailCard />
@@ -22,8 +28,8 @@ export default function Home() {
         <GitHubCard />
         <SpotifyCard />
         <WeatherCard />
+        <CertificateCard />
       </div>
-      <CertificateCard />
     </main>
   )
 }

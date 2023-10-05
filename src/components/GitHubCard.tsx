@@ -13,7 +13,7 @@ function GitHubCard() {
       target="_blank"
       title="Estani02"
     >
-      <GitHub className="h-[293px] w-full max-w-[293px]" />
+      <GitHub className="h-full w-full" />
       <OpenInNewIcon className="absolute right-5 top-5 h-4 w-4 text-[#ffffff77] md:h-6 md:w-6" />
     </Link>
   )

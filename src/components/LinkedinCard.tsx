@@ -12,7 +12,7 @@ function LinkedinCard() {
       rel="noopener noreferrer"
       target="_blank"
     >
-      <LinkedIn className="h-[293px] w-full max-w-[293px]" />
+      <LinkedIn className="h-full w-full" />
       <OpenInNewIcon className="absolute right-5 top-5 h-4 w-4 text-[#ffffff77] md:h-6 md:w-6" />
     </Link>
   )

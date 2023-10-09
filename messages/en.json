@@ -1,0 +1,24 @@
+{
+  "header": {
+    "name": "Estanisloa Olmedo",
+    "positon": "Full Stack Developer"
+  },
+  "about": {
+    "experienced": "Experienced in creating customized software solutions according to needs",    
+    "enthusiastic": "I am enthusiastic about learning and exploring new technologies.",
+    "capable": "Trained in application design and development",
+    "group_projects":"Ability to work on group projects, completing them in a timely manner",  
+    "search":"Looking for challenging opportunities to continue growing in my career as a programmer"  
+  },
+  "projects": {
+    "title": "Projects",
+    "p_1": "I invite you to take a look at the work I have done.",
+    "p_2": "You will find projects of various complexities."
+  },
+  "spotify": {
+    "recently": "Recently Listened"
+  },
+  "certifcate": {
+    "title": "Full Stack Programmer"
+  }
+}

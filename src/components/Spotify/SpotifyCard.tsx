@@ -13,14 +13,23 @@ import { Marquee } from '../Marquee/Marquee'
 
 import { PreviewSong } from './PreviewSong'
 
-export default function SpotifyCard() {
+export default function SpotifyCard({ translated_text }: { translated_text: string }) {
   const { data, isLoading } = useSWR('/api/nowplaying', (url) =>
     axios.post(url).then((res) => res.data as Track),
   )
 
   return (
-    <section className="col-start-3 row-start-3 flex h-fit w-full max-w-md justify-center overflow-hidden rounded-2xl bg-gradient-to-tl from-[#cc2b5e]/30 to-[#753a88]/30 px-2 py-3 text-[#ffffff77] shadow-2xl shadow-white/30 backdrop-blur-sm md:max-w-lg md:flex-col md:p-4 md:pb-6">
-      <div className="flex gap-2">
+    <section className="relative flex h-fit w-full max-w-md justify-center overflow-hidden rounded-2xl text-[#ffffff77] shadow-2xl shadow-white/30 backdrop-blur-sm md:max-w-lg md:flex-col">
+      <Image
+        alt={data?.name || 'Song coverpage'}
+        className="absolute -z-50 h-full w-full object-cover brightness-[.20]"
+        draggable="false"
+        height={150}
+        loading="lazy"
+        src={data?.album.images[0].url || noise}
+        width={150}
+      />
+      <div className="flex gap-2 px-2 py-3 md:p-4 md:pb-6">
         <Image
           alt={data?.name || 'Song coverpage'}
           className="h-[100px] w-[100px] object-cover md:h-[150px] md:w-[150px]"
@@ -31,7 +40,7 @@ export default function SpotifyCard() {
           width={150}
         />
         <div className="flex flex-col">
-          <p className="text-base font-bold md:text-lg">Recently listened</p>
+          <p className="text-base font-bold md:text-lg">{translated_text}</p>
           <Marquee link={data?.external_urls.spotify} loading={isLoading} text={data?.name} />
           <p className={`text-xs md:text-sm ${isLoading && 'text-transparent'}`}>
             {isLoading ? 'Loading..' : data?.artists[0].name}

@@ -1,20 +1,24 @@
 {
-  "Header": {
+  "header": {
     "name": "Estanisloa Olmedo",
     "positon": "Desarrollador Full Stack"
   },
-  "About": {
+  "about": {
     "experienced": "Experimentado en la creación de soluciones de software personalizada según las necesidades",
     "enthusiastic": "Me entusiasma el aprendizaje y la exploración de nuevas tecnologías",
     "capable": "Capacitado en el diseño y desarrollo de aplicaciones",
-    "group_projects":"En busca de oportunidades desafiantes para seguir creciendo en mi carrera como programador"
+    "group_projects":"Habilidad de trabajar en proyectos grupales, cumpliéndolos en tiempo y forma",
+    "search":"En busca de oportunidades desafiantes para seguir creciendo en mi carrera como programador"
   },
-  "Projects": {
+  "projects": {
     "title": "Proyectos",
     "p_1": "Te invito a que eches un vistazo a los trabajos que he realizado.",
     "p_2": "Vas a encontrar proyectos de diversas complejidades."
   },
-  "Certifcate": {
+  "spotify": {
+    "recently": "Escuchado Recientemente"
+  },
+  "certifcate": {
     "title": "Programador Full Stack"
   }
 }

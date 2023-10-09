@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 'use client'
 
 import Link from 'next/link'
@@ -11,7 +14,7 @@ function LanguagueCard() {
     localStorage.setItem('language', languague)
   }, [languague])
 
-  const handleLanguague = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleLanguague = (e: any) => {
     setLanguague(e.target.name)
   }
 

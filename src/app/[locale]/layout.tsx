@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import '../globals.css'
 import type { Metadata } from 'next'
@@ -30,10 +31,7 @@ export default function RootLayout({
 
   return (
     <html lang={locale}>
-      <body
-        suppressHydrationWarning
-        className={`${font.className} bg-white dark:bg-black dark:text-white`}
-      >
+      <body suppressHydrationWarning className={`${font.className} dark:bg-black dark:text-white`}>
         <Providers>{children}</Providers>
       </body>
     </html>

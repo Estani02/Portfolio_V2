@@ -13,6 +13,7 @@ import ProjectsCard from '@/components/ProjectsCard'
 import ThemesCard from '@/components/ThemesCard'
 import LanguagueCard from '@/components/LanguagueCard'
 import SkillsCard from '@/components/SkillsCard'
+import FootballCard from '@/components/FootballCard'
 
 export default function Home() {
   const t = useTranslations('spotify')
@@ -37,6 +38,7 @@ export default function Home() {
         <WeatherCard />
         <CertificateCard />
         <SkillsCard />
+        <FootballCard />
       </div>
     </main>
   )

@@ -131,3 +131,277 @@ export interface Sys {
   sunrise: number
   sunset: number
 }
+
+export interface Football {
+  response: ResponseFixture[]
+}
+
+export interface ResponseFixture {
+  fixture: Fixture
+  league: League
+  teams: Teams
+  goals: Goals
+  score: Score
+}
+
+export interface Fixture {
+  id: number
+  referee: any
+  timezone: string
+  date: string
+  timestamp: number
+  periods: Periods
+  venue: Venue
+  status: Status
+}
+
+export interface Periods {
+  first: number
+  second: any
+}
+
+export interface Venue {
+  id: number
+  name: string
+  city: string
+}
+
+export interface Status {
+  long: string
+  short: string
+  elapsed: number
+}
+
+export interface League {
+  id: number
+  name: string
+  country: string
+  logo: string
+  flag: string
+  season: number
+  round: string
+}
+
+export interface Teams {
+  home: Home
+  away: Away
+}
+
+export interface Home {
+  id: number
+  name: string
+  logo: string
+  winner: boolean
+}
+
+export interface Away {
+  id: number
+  name: string
+  logo: string
+  winner: boolean
+}
+
+export interface Goals {
+  home: number
+  away: number
+}
+
+export interface Score {
+  halftime: Halftime
+  fulltime: Fulltime
+  extratime: Extratime
+  penalty: Penalty
+}
+
+export interface Halftime {
+  home: number
+  away: number
+}
+
+export interface Fulltime {
+  home: number
+  away: number
+}
+
+export interface Extratime {
+  home: number
+  away: number
+}
+
+export interface Penalty {
+  home: number
+  away: number
+}
+
+export interface RootFootball {
+  last_match: LastMatch
+  next_match: NextMatch
+}
+
+export interface LastMatch {
+  teams: Teams
+  fixture: Fixture
+  status: Status
+  league: League
+  goals: Goals
+  score: Score
+}
+
+export interface Teams {
+  home: Home
+  away: Away
+}
+
+export interface Home {
+  name: string
+  logo: string
+  winner: boolean
+}
+
+export interface Away {
+  name: string
+  logo: string
+  winner: boolean
+}
+
+export interface Fixture {
+  date: string
+  time: string
+  date_format: string
+}
+
+export interface Date {
+  es: string
+  en: string
+}
+
+export interface Status {
+  long: string
+  short: string
+  elapsed: number
+}
+
+export interface League {
+  name: string
+  country: string
+  logo: string
+  flag: string
+  season: number
+  round: string
+}
+
+export interface Goals {
+  home: number
+  away: number
+}
+
+export interface Score {
+  halftime: Halftime
+  fulltime: Fulltime
+  extratime: Extratime
+  penalty: Penalty
+}
+
+export interface Halftime {
+  home: number
+  away: number
+}
+
+export interface Fulltime {
+  home: number
+  away: number
+}
+
+export interface Extratime {
+  home: number
+  away: number
+}
+
+export interface Penalty {
+  home: number
+  away: number
+}
+
+export interface NextMatch {
+  teams: Teams2
+  fixture: Fixture2
+  status: Status2
+  league: League2
+  goals: Goals2
+  score: Score2
+}
+
+export interface Teams2 {
+  home: Home2
+  away: Away2
+}
+
+export interface Home2 {
+  name: string
+  logo: string
+  winner: any
+}
+
+export interface Away2 {
+  name: string
+  logo: string
+  winner: any
+}
+
+export interface Fixture2 {
+  date: Date2
+  time: string
+  date_format: string
+}
+
+export interface Date2 {
+  es: string
+  en: string
+}
+
+export interface Status2 {
+  long: string
+  short: string
+  elapsed: any
+}
+
+export interface League2 {
+  name: string
+  country: string
+  logo: string
+  flag: string
+  season: number
+  round: string
+}
+
+export interface Goals2 {
+  home: any
+  away: any
+}
+
+export interface Score2 {
+  halftime: Halftime2
+  fulltime: Fulltime2
+  extratime: Extratime2
+  penalty: Penalty2
+}
+
+export interface Halftime2 {
+  home: number
+  away: number
+}
+
+export interface Fulltime2 {
+  home: number
+  away: number
+}
+
+export interface Extratime2 {
+  home: number
+  away: number
+}
+
+export interface Penalty2 {
+  home: number
+  away: number
+}

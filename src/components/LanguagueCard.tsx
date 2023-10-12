@@ -1,61 +1,41 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 'use client'
 
+import { useLocale } from 'next-intl'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 function LanguagueCard() {
-  const initialLanguage = localStorage.getItem('language') || 'es'
-  const [languague, setLanguague] = useState(initialLanguage)
-
-  useEffect(() => {
-    localStorage.setItem('language', languague)
-  }, [languague])
-
-  const handleLanguague = (e: any) => {
-    setLanguague(e.target.name)
-  }
+  const locale = useLocale()
 
   return (
     <div className="relative col-start-4 row-start-1 flex flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-to-tl from-[#cc2b5e]/30 to-[#753a88]/30 p-5 text-4xl font-bold uppercase shadow-2xl shadow-[#cc2b5e]/30">
-      <div className="flex w-full flex-col gap-5">
-        <Link legacyBehavior passHref href="/es" scroll={false}>
-          <button
-            className={`${
-              languague === 'es' ? 'scale-[105%] bg-white/20' : ''
-            } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
-            name="es"
-            type="button"
-            onClick={(e) => handleLanguague(e)}
-          >
-            Español
-          </button>
+      <div className="flex w-full flex-col gap-5 capitalize">
+        <Link
+          className={`${
+            locale === 'es' ? 'scale-[105%] bg-white/20' : ''
+          } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
+          href="/es"
+          scroll={false}
+        >
+          Español
         </Link>
-        <Link href="/en" scroll={false}>
-          <button
-            className={`${
-              languague === 'en' ? 'scale-[105%] bg-white/20' : ''
-            } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
-            name="en"
-            type="button"
-            onClick={(e) => handleLanguague(e)}
-          >
-            English
-          </button>
+        <Link
+          className={`${
+            locale === 'en' ? 'scale-[105%] bg-white/20' : ''
+          } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
+          href="/en"
+          scroll={false}
+        >
+          English
         </Link>
-        <Link href="/pt" scroll={false}>
-          <button
-            className={`${
-              languague === 'pt' ? 'scale-[105%] bg-white/20' : ''
-            } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
-            name="pt"
-            type="button"
-            onClick={(e) => handleLanguague(e)}
-          >
-            Português
-          </button>
+        <Link
+          className={`${
+            locale === 'pt' ? 'scale-[105%] bg-white/20' : ''
+          } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
+          href="/pt"
+          scroll={false}
+        >
+          Português
         </Link>
       </div>
     </div>

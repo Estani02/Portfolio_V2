@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'openweathermap.org',
       },
+      {
+        protocol: 'https',
+        hostname: 'media-4.api-sports.io',
+      },
     ],
   },
 }

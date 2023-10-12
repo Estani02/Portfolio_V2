@@ -168,7 +168,7 @@ async function getInfo() {
   }
 }
 
-export async function GET() {
+export async function POST() {
   const matches = await getInfo()
 
   console.log('+1 peticion')

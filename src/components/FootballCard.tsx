@@ -17,7 +17,7 @@ function FootballCard() {
 
   const { data } = useSWR(
     '/api/football',
-    (url) => axios.get(url).then((res) => res.data as RootFootball),
+    (url) => axios.post(url).then((res) => res.data as RootFootball),
     { focusThrottleInterval: countdown, revalidateOnFocus: false, refreshInterval: countdown },
   )
 

@@ -16,7 +16,7 @@ function CertificateCard() {
         particleCount: 150,
         spread: 150,
         origin: {
-          x: 0.9,
+          x: 0.85,
           y: 0.8,
         },
         // angle: 180,
@@ -43,7 +43,7 @@ function CertificateCard() {
   return (
     <Link
       aria-label="Certificado"
-      className="relative col-start-4 row-start-4 flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-5 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:max-w-lg"
+      className="relative col-start-4 row-start-5 flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-5 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:max-w-lg"
       href="https://certificates.soyhenry.com/new-cert?id=5e82bb1f0e32c3860281fabc7393aa0fea2aa5a4e528ee7ca697fb838b5126b8"
       rel="noopener noreferrer"
       target="_blank"

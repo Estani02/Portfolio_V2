@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import EastIcon from '@mui/icons-material/East'
 import { useTranslations } from 'next-intl'
+import Link from 'next/link'
 
 import bg_gif from '@/assets/images/proyect.gif'
 
@@ -9,7 +10,10 @@ function ProjectsCard() {
   const t = useTranslations('projects')
 
   return (
-    <div className="relative col-start-4 row-span-2 row-start-2 h-full w-full cursor-pointer rounded-2xl object-cover text-white shadow-2xl shadow-white/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-white/50">
+    <Link
+      className="relative col-start-4 row-span-2 row-start-2 h-full w-full cursor-pointer rounded-2xl object-cover text-white shadow-2xl shadow-white/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-white/50"
+      href="/projects"
+    >
       <Image
         alt="Espacio de trabajo de programador"
         className="absolute h-full rounded-2xl object-cover brightness-[0.42]"
@@ -29,7 +33,7 @@ function ProjectsCard() {
           <p />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

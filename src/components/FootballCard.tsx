@@ -1,5 +1,5 @@
 'use client'
-import type { RootFootball } from '@/interfaces'
+import type { RootFootball } from '@/interfaces/football_api'
 
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
@@ -11,9 +11,17 @@ import '@/assets/LiveIcon.css'
 import players from '@/assets/images/Talleres-min.png'
 import bg from '@/assets/images/bg_talleres.jpg'
 import { updateCountdown } from '@/utils/updateCountdown'
+import { convertDateTime } from '@/utils/convertDateTime'
 
 function FootballCard() {
   const [countdown, setCountdown] = useState(1000000)
+  const [date, setDate] = useState({
+    day: {
+      es: '',
+      en: '',
+    },
+    time: '',
+  })
 
   const { data } = useSWR(
     '/api/football',
@@ -23,8 +31,8 @@ function FootballCard() {
 
   useEffect(() => {
     if (data) {
-      setCountdown(updateCountdown(data.next_match.fixture.date_format)!)
-      console.log(data.next_match.status.timezone)
+      setCountdown(updateCountdown(data.next_match.fixture.date)!)
+      setDate(convertDateTime(data.next_match.fixture.date))
     }
   }, [data])
 
@@ -70,9 +78,9 @@ function FootballCard() {
                 </div>
               ) : (
                 <div className="flex flex-col text-center font-bold">
-                  <p className="text-3xl">{data.next_match.fixture.time}</p>
+                  <p className="text-3xl">{date.time}</p>
                   <span className="text-[10px] text-[#b0b0b0]">(GMT-3)</span>
-                  <p className="text-lg text-[#b0b0b0]">{data.next_match.fixture.date.es}</p>
+                  <p className="text-lg text-[#b0b0b0]">{date.day.es}</p>
                 </div>
               )}
               <Image

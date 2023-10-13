@@ -2,63 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { ResponseFixture } from '@/interfaces'
 
-function convertDateTime(inputDateTime: string) {
-  const dateTime = new Date(inputDateTime)
-
-  // Obtiene el día del mes
-  const day = dateTime.getDate()
-
-  // Obtiene el mes en formato abreviado en español
-  const monthNamesEs = [
-    'ene',
-    'feb',
-    'mar',
-    'abr',
-    'may',
-    'jun',
-    'jul',
-    'ago',
-    'sep',
-    'oct',
-    'nov',
-    'dic',
-  ]
-  const monthEs = monthNamesEs[dateTime.getMonth()]
-
-  // Obtiene el mes en formato abreviado en inglés
-  const monthNamesEn = [
-    'jan',
-    'feb',
-    'mar',
-    'apr',
-    'may',
-    'jun',
-    'jul',
-    'aug',
-    'sep',
-    'oct',
-    'nov',
-    'dec',
-  ]
-  const monthEn = monthNamesEn[dateTime.getMonth()]
-
-  // Obtiene la hora y los minutos en formato de dos dígitos
-  const hours = dateTime.getHours().toString().padStart(2, '0')
-  const minutes = dateTime.getMinutes().toString().padStart(2, '0')
-
-  // Crea el objeto JSON con la fecha y hora formateada en ambos idiomas
-  const result = {
-    date: {
-      es: `${day} ${monthEs}`,
-      en: `${day} ${monthEn}`,
-    },
-    time: `${hours}:${minutes}`,
-    date_format: inputDateTime,
-  }
-
-  return result
-}
-
 async function getInfo() {
   try {
     const commonHeaders = {
@@ -91,8 +34,6 @@ async function getInfo() {
     ])
 
     const transformMatchData = (matchData: ResponseFixture) => {
-      const fixture = convertDateTime(matchData.fixture.date)
-
       return {
         teams: {
           home: {
@@ -106,9 +47,12 @@ async function getInfo() {
             winner: matchData.teams.away.winner,
           },
         },
-        fixture,
-        status: {
+        fixture: {
           timezone: matchData.fixture.timezone,
+          date: matchData.fixture.date,
+          timestamp: matchData.fixture.timestamp,
+        },
+        status: {
           long: matchData.fixture.status.long,
           short: matchData.fixture.status.short,
           elapsed: matchData.fixture.status.elapsed,

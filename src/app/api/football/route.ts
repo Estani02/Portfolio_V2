@@ -66,13 +66,6 @@ async function getInfo() {
       'x-rapidapi-key': process.env.NEXT_PUBLIC_FOOTBALL_KEY!,
     }
 
-    // const fetchData = async (query: string) => {
-    //   const url = `https://v3.football.api-sports.io/fixtures?team=456&${query}&timezone=America/Argentina/Cordoba`
-    //   const response = await axios.get(url, { headers: commonHeaders })
-
-    //   return response.data.response[0] as ResponseFixture
-    // }
-
     const fetchData = async (query: string) => {
       const url = `https://v3.football.api-sports.io/fixtures?team=456&${query}&timezone=America/Argentina/Cordoba`
       const response = await fetch(url, {
@@ -115,6 +108,7 @@ async function getInfo() {
         },
         fixture,
         status: {
+          timezone: matchData.fixture.timezone,
           long: matchData.fixture.status.long,
           short: matchData.fixture.status.short,
           elapsed: matchData.fixture.status.elapsed,

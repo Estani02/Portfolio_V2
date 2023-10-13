@@ -24,11 +24,12 @@ function FootballCard() {
   useEffect(() => {
     if (data) {
       setCountdown(updateCountdown(data.next_match.fixture.date_format)!)
+      console.log(data.next_match.status.timezone)
     }
   }, [data])
 
   return (
-    <div className="relative -z-20 col-span-2 row-start-5 overflow-hidden rounded-2xl bg-gradient-to-br from-[#fffd2d]/80 to-[#fffd2d]/30 shadow-2xl shadow-[#040d2d]/30">
+    <div className="relative -z-20 col-span-2 row-start-5 overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30">
       <Image
         alt="Escudo de Talleres, equipo de Estanislao"
         className="absolute -z-20 h-full w-full object-cover brightness-[.32]"

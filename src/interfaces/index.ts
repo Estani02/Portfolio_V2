@@ -360,6 +360,7 @@ export interface Date2 {
 }
 
 export interface Status2 {
+  timezone: string
   long: string
   short: string
   elapsed: any

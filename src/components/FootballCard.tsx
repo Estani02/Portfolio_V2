@@ -13,7 +13,7 @@ import bg from '@/assets/images/bg_talleres.jpg'
 import { updateCountdown } from '@/utils/updateCountdown'
 
 function FootballCard() {
-  const [countdown, setCountdown] = useState(0)
+  const [countdown, setCountdown] = useState(1000000)
 
   const { data } = useSWR(
     '/api/football',

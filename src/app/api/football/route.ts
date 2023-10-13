@@ -5,6 +5,9 @@ import type { ResponseFixture } from '@/interfaces'
 function convertDateTime(inputDateTime: string) {
   const dateTime = new Date(inputDateTime)
 
+  // Convierte la fecha y hora a la zona horaria de Argentina
+  dateTime.setHours(dateTime.getHours() - 3)
+
   // Obtiene el día del mes
   const day = dateTime.getDate()
 

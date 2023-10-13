@@ -15,6 +15,7 @@ import { convertDateTime } from '@/utils/convertDateTime'
 
 function FootballCard() {
   const [countdown, setCountdown] = useState(1000000)
+  const [hoverCard, setHoverCard] = useState(false)
   const [date, setDate] = useState({
     day: {
       es: '',
@@ -25,8 +26,13 @@ function FootballCard() {
 
   const { data } = useSWR(
     '/api/football',
-    (url) => axios.post(url).then((res) => res.data as RootFootball),
-    { focusThrottleInterval: countdown, revalidateOnFocus: false, refreshInterval: countdown },
+    (url) => axios.get(url).then((res) => res.data as RootFootball),
+    {
+      focusThrottleInterval: countdown,
+      revalidateOnFocus: false,
+      refreshInterval: countdown,
+      // revalidateOnMount: false,
+    },
   )
 
   useEffect(() => {
@@ -36,8 +42,22 @@ function FootballCard() {
     }
   }, [data])
 
+  const handleMouseEnter = () => {
+    setHoverCard(true)
+  }
+
+  const handleMouseLeave = () => {
+    setHoverCard(false)
+  }
+
   return (
-    <div className="relative -z-20 col-span-2 row-start-5 overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30">
+    <div
+      className={`relative col-span-2 row-start-5 cursor-pointer overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30 transition-transform duration-200 ${
+        hoverCard && 'scale-[103%]'
+      }`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Image
         alt="Escudo de Talleres, equipo de Estanislao"
         className="absolute -z-20 h-full w-full object-cover brightness-[.32]"
@@ -47,7 +67,9 @@ function FootballCard() {
         <>
           <Image
             alt="Talleres, equipo de Estanislao"
-            className="absolute -right-28 bottom-0 -z-10 h-[60%] w-[60%] object-cover brightness-[.77] transition-transform duration-200 hover:scale-110"
+            className={`absolute -right-28 bottom-0 -z-10 h-[60%] w-[60%] object-cover brightness-[.77] transition-transform duration-200 ${
+              hoverCard && 'z-50 scale-110'
+            }`}
             src={players}
           />
           <div className="relative flex h-full flex-col items-center gap-4 p-5">
@@ -101,10 +123,7 @@ function FootballCard() {
                     src={data.last_match.league.logo}
                     width={20}
                   />
-                  <p className="text-sm text-[#b0b0b0]">
-                    {data.last_match.league.name}
-                    {/* &nbsp; {data.last_match.league.round} */}
-                  </p>
+                  <p className="text-sm text-[#b0b0b0]">{data.last_match.league.name}</p>
                 </div>
               </div>
               <div className="flex h-fit gap-8">

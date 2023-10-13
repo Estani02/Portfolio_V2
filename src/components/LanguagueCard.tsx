@@ -2,7 +2,6 @@
 
 import { useLocale } from 'next-intl'
 import Link from 'next-intl/link'
-import { useEffect, useState } from 'react'
 
 function LanguagueCard() {
   const locale = useLocale()

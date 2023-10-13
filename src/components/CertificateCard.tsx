@@ -9,6 +9,7 @@ import henry from '@/assets/images/mockups_henry.png'
 
 function CertificateCard() {
   const [confettiPaused, setConfettiPaused] = useState(false)
+  const [hoverCard, setHoverCard] = useState(false)
 
   function hove() {
     if (!confettiPaused) {
@@ -29,7 +30,6 @@ function CertificateCard() {
       }, 3000) // 2000 milisegundos (2 segundos) de pausa
     }
   }
-  const [hoverCard, setHoverCard] = useState(false)
 
   const handleMouseEnter = () => {
     setHoverCard(true)

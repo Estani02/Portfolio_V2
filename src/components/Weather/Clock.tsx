@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 function Clock() {
   const [time, setTime] = useState('')
 
-  const formatter = new Intl.DateTimeFormat('en-US', {
+  const formatter = new Intl.DateTimeFormat('es-AR', {
     timeZone: 'America/Argentina/Cordoba',
     hour12: false,
     hour: 'numeric',

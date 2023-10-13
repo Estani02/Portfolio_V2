@@ -38,7 +38,7 @@ export default function Home() {
         <WeatherCard />
         <CertificateCard />
         <SkillsCard />
-        <FootballCard />
+        {/* <FootballCard /> */}
       </div>
     </main>
   )

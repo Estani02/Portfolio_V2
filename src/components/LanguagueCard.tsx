@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale } from 'next-intl'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import { useEffect, useState } from 'react'
 
 function LanguagueCard() {
@@ -14,7 +14,8 @@ function LanguagueCard() {
           className={`${
             locale === 'es' ? 'scale-[105%] bg-white/20' : ''
           } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
-          href="/es"
+          href="/"
+          locale="es"
           scroll={false}
         >
           Español
@@ -23,7 +24,8 @@ function LanguagueCard() {
           className={`${
             locale === 'en' ? 'scale-[105%] bg-white/20' : ''
           } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
-          href="/en"
+          href="/"
+          locale="en"
           scroll={false}
         >
           English
@@ -32,7 +34,8 @@ function LanguagueCard() {
           className={`${
             locale === 'pt' ? 'scale-[105%] bg-white/20' : ''
           } w-full rounded-full py-2 text-center transition duration-300 hover:scale-[105%] hover:bg-white/20`}
-          href="/pt"
+          href="/"
+          locale="pt"
           scroll={false}
         >
           Português

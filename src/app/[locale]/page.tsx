@@ -18,6 +18,7 @@ import ExperienceCard from '@/components/ExperienceCard'
 
 export default function Home() {
   const t = useTranslations('spotify')
+  const t2 = useTranslations('football')
 
   return (
     <main className="m-[20px] flex flex-col gap-[80px] xl:m-[50px]">
@@ -39,7 +40,9 @@ export default function Home() {
         <WeatherCard />
         <ExperienceCard />
         <SkillsCard />
-        <FootballCard />
+        <FootballCard
+          translated_text={{ last_match: t2('last_match'), next_match: t2('next_match') }}
+        />
         <CertificateCard />
       </div>
     </main>

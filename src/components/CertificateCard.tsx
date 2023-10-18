@@ -43,7 +43,7 @@ function CertificateCard() {
   return (
     <Link
       aria-label="Certificado"
-      className="relative col-start-3 row-start-[8] flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-5 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:max-w-lg xl:col-start-4 xl:row-start-5"
+      className="relative col-start-3 row-start-[8] flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-2 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:max-w-lg md:p-5 xl:col-start-4 xl:row-start-5"
       href="https://certificates.soyhenry.com/new-cert?id=5e82bb1f0e32c3860281fabc7393aa0fea2aa5a4e528ee7ca697fb838b5126b8"
       rel="noopener noreferrer"
       target="_blank"
@@ -53,15 +53,15 @@ function CertificateCard() {
       <Image
         alt="Programador Certificado"
         className={`${
-          hoverCard && 'bottom-[15%] md:bottom-[-10%]'
-        } absolute bottom-[-10%] min-w-[150px] transition-all duration-300 md:bottom-[-30%]`}
+          hoverCard && 'bottom-[0%] md:bottom-[-8%]'
+        } absolute bottom-[-50%] min-w-[150px] transition-all duration-300 md:bottom-[-40%]`}
         src={henry}
       />
-      <div className="mt-14">
+      <div className="mt-8 text-center sm:mt-1 md:mt-14">
         <p className="relative z-50 text-xl font-bold md:text-2xl">Full Stack Developer</p>
-        <p className="text-center text-xs text-[#ffffff77] md:text-lg">Soy Henry - 2023</p>
+        <p className="text-xs text-[#ffffff77] md:text-lg">Soy Henry - 2023</p>
       </div>
-      <OpenInNewIcon className="absolute right-5 top-5 h-4 w-4 text-[#ffffff77] md:h-6 md:w-6" />
+      <OpenInNewIcon className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
     </Link>
   )
 }

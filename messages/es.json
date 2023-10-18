@@ -23,5 +23,9 @@
   },
   "exp": {
     "title": "AÑOS DE EXPERIENCIA"
+  },
+  "football": {
+    "next_match": "Próximo partido de Talleres",
+    "last_match": "Último partido"
   }
 }

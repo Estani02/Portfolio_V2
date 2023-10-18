@@ -108,7 +108,7 @@ async function getInfo(apiKeys: string[]) {
 export async function POST() {
   try {
     const apiKeys = [
-      // process.env.FOOTBALL_KEY_1!,
+      process.env.FOOTBALL_KEY_1!,
       process.env.FOOTBALL_KEY_2!,
       process.env.FOOTBALL_KEY_3!,
     ]

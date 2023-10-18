@@ -9,12 +9,19 @@ import axios from 'axios'
 
 import '@/assets/LiveIcon.css'
 
+import { useLocale } from 'next-intl'
+
 import players from '@/assets/images/Talleres-min.png'
 import bg from '@/assets/images/bg_talleres.jpg'
 import { updateCountdown } from '@/utils/updateCountdown'
 import { convertDateTime } from '@/utils/convertDateTime'
 
-function FootballCard() {
+function FootballCard({
+  translated_text,
+}: {
+  translated_text: { last_match: string; next_match: string }
+}) {
+  const locale = useLocale()
   const [countdown, setCountdown] = useState(1000000)
   const [hoverCard, setHoverCard] = useState(false)
   const [date, setDate] = useState({
@@ -73,7 +80,7 @@ function FootballCard() {
             src={players}
           />
           <div className="relative flex h-full flex-col items-center gap-4 p-5">
-            <p className="text-3xl font-bold">Próximo partido de Talleres</p>
+            <p className="font-bold md:text-lg xl:text-3xl">{translated_text.next_match}</p>
             <div className="flex gap-4 border-b border-[#b0b0b0] pb-1">
               <Image
                 alt={data.next_match.league.name}
@@ -81,14 +88,15 @@ function FootballCard() {
                 src={data.next_match.league.logo}
                 width={30}
               />
-              <p>
-                {data.next_match.league.name} - {data.next_match.league.round}
+              <p className="text-xs md:text-sm xl:text-base">
+                {data.next_match.league.name}
+                {/* - {data.next_match.league.round} */}
               </p>
             </div>
-            <div className="flex h-fit gap-14">
+            <div className="flex h-fit gap-4 text-xs md:text-sm xl:gap-14 xl:text-base">
               <Image
                 alt={data.next_match.teams.home.name}
-                className="h-fit"
+                className="h-fit w-full max-w-[40px] md:max-w-[80px]"
                 height={150}
                 src={data.next_match.teams.home.logo}
                 width={80}
@@ -100,22 +108,24 @@ function FootballCard() {
                 </div>
               ) : (
                 <div className="flex flex-col text-center font-bold">
-                  <p className="text-3xl">{date.time}</p>
+                  <p className="text-lg xl:text-3xl">{date.time}</p>
                   <span className="text-[10px] text-[#b0b0b0]">(GMT-3)</span>
-                  <p className="text-lg text-[#b0b0b0]">{date.day.es}</p>
+                  <p className="text-[#b0b0b0] xl:text-lg">
+                    {locale === 'en' ? date.day.en : date.day.es}
+                  </p>
                 </div>
               )}
               <Image
                 alt={data.next_match.teams.away.name}
-                className="h-fit"
+                className="h-fit w-full max-w-[40px] md:max-w-[80px]"
                 height={150}
                 src={data.next_match.teams.away.logo}
                 width={80}
               />
             </div>
-            <div className="absolute bottom-0 left-0 flex flex-col items-center gap-2 p-5">
+            <div className="absolute bottom-0 left-0 hidden flex-col items-center gap-2 p-5 xl:flex">
               <div className="flex flex-col items-center gap-1">
-                <p className="text-sm font-semibold">Ultimo partido</p>
+                <p className="text-sm font-semibold">{translated_text.last_match}</p>
                 <div className="flex gap-1">
                   <Image
                     alt={data.last_match.league.name}

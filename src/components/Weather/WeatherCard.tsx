@@ -43,11 +43,11 @@ function WeatherCard() {
   }, [data])
 
   return (
-    <div className={`col-span-2 row-start-[8] xl:col-start-3 xl:row-start-4 w-full rounded-2xl ${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]' : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'}`}>
+    <div className={`col-start-1 row-start-4 sm:row-start-[8] sm:col-span-2 xl:col-start-3 xl:row-start-4 w-full rounded-2xl ${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]' : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'}`}>
       {isLoading ? (
       null
       ) : (
-        <div className='flex flex-col w-full justify-around overflow-hidden rounded-2xl bg-clip-padding p-6 text-white backdrop-blur-sm md:flex-row-reverse items-center'>
+        <div className='flex flex-col w-full justify-around overflow-hidden rounded-2xl bg-clip-padding p-6 text-white backdrop-blur-sm sm:flex-row-reverse items-center'>
           {isDaytime ? <Sun /> : <Moon />}
           <div className="flex flex-col">
             <div className="flex text-sm flex-col md:text-base">

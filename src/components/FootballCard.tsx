@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 'use client'
 import type { RootFootball } from '@/interfaces/football_api'
 
@@ -26,12 +27,11 @@ function FootballCard() {
 
   const { data } = useSWR(
     '/api/football',
-    (url) => axios.get(url).then((res) => res.data as RootFootball),
+    (url) => axios.post(url).then((res) => res.data as RootFootball),
     {
-      focusThrottleInterval: countdown,
+      focusThrottleInterval: countdown === 0 ? 600000 : countdown,
       revalidateOnFocus: false,
-      refreshInterval: countdown,
-      // revalidateOnMount: false,
+      refreshInterval: countdown === 0 ? 600000 : countdown,
     },
   )
 
@@ -134,9 +134,28 @@ function FootballCard() {
                   src={data.last_match.teams.home.logo}
                   width={30}
                 />
-                <p className="text-lg">
-                  {data.last_match.score.fulltime.home}-{data.last_match.score.fulltime.away}
-                </p>
+                {data.last_match.status.long !== 'Match Finished' ? (
+                  <div className="flex flex-col items-center justify-center gap-1">
+                    <p className="text-lg">
+                      {data.last_match.goals.home}-{data.last_match.goals.away}
+                    </p>
+                    <div className="flex items-center justify-center gap-1">
+                      <div className="circle" />
+                      <p className="mb-5">EN VIVO</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <p className="text-lg">
+                      {data.last_match.score.fulltime.home}-{data.last_match.score.fulltime.away}
+                    </p>
+                    {data.last_match.status.short === 'PEN' ? (
+                      <p className="text-[12px] text-[#b0b0b0]">
+                        ({data.last_match.score.penalty.away}-{data.last_match.score.penalty.home})
+                      </p>
+                    ) : null}
+                  </div>
+                )}
                 <Image
                   alt={data.last_match.teams.away.name}
                   className="h-fit"

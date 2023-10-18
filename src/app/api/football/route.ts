@@ -1,31 +1,29 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { ResponseFixture } from '@/interfaces'
 
-async function getInfo() {
+async function getInfo(apiKeys: string[]) {
   try {
-    const commonHeaders = {
-      'x-rapidapi-host': 'v3.football.api-sports.io',
-      'x-rapidapi-key': process.env.NEXT_PUBLIC_FOOTBALL_KEY!,
-    }
-
     const fetchData = async (query: string) => {
       const url = `https://v3.football.api-sports.io/fixtures?team=456&${query}&timezone=America/Argentina/Cordoba`
-      const response = await fetch(url, {
-        headers: commonHeaders,
-        // next: { revalidate: 12 * 60 * 60 * 1000 },
-      })
 
-      // Verifica si la respuesta fue exitosa
-      if (!response.ok) {
-        throw new Error(`Error fetching data: ${response.status}`)
+      for (const apiKey of apiKeys) {
+        const response = await fetch(url, {
+          headers: {
+            'x-rapidapi-host': 'v3.football.api-sports.io',
+            'x-rapidapi-key': apiKey,
+          },
+        })
+
+        const data = await response.json()
+
+        if (data.errors.length === 0) {
+          return data.response[0] as ResponseFixture
+        }
       }
-
-      // Convierte la respuesta a JSON
-      const data = await response.json()
-
-      // Devuelve el primer resultado
-      return data.response[0] as ResponseFixture
+      throw new Error('All API Keys failed to retrieve data.')
     }
 
     const [lastMatchData, nextMatchData] = await Promise.all([
@@ -99,17 +97,25 @@ async function getInfo() {
     }
 
     return jsonResponse
-  } catch (error) {
-    console.error('Error:', error)
+  } catch (error: any) {
+    console.log(error.message)
 
-    return { error: error }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    throw new Error(error.message)
   }
 }
 
-export async function GET() {
-  const matches = await getInfo()
+export async function POST() {
+  try {
+    const apiKeys = [
+      // process.env.FOOTBALL_KEY_1!,
+      process.env.FOOTBALL_KEY_2!,
+      process.env.FOOTBALL_KEY_3!,
+    ]
+    const matches = await getInfo(apiKeys)
 
-  console.log('+1 peticion')
-
-  return Response.json(matches)
+    return Response.json(matches)
+  } catch (error: any) {
+    return Response.json({ error: error.message }, { status: 500 })
+  }
 }

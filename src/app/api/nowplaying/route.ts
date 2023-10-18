@@ -4,14 +4,14 @@ import type { Root } from '@/interfaces'
 import SpotifyWebApi from 'spotify-web-api-node'
 
 const api = new SpotifyWebApi({
-  clientId: process.env.NEXT_PUBLIC_SPOTIFY_CLIENT,
-  clientSecret: process.env.NEXT_PUBLIC_SPOTIFY_SECRET,
-  redirectUri: process.env.NEXT_PUBLIC_SPOTIFY_REDIRECT,
+  clientId: process.env.SPOTIFY_CLIENT,
+  clientSecret: process.env.SPOTIFY_SECRET,
+  redirectUri: process.env.SPOTIFY_REDIRECT,
 })
 
 export async function POST() {
   try {
-    api.setRefreshToken(process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN!)
+    api.setRefreshToken(process.env.SPOTIFY_REFRESH_TOKEN!)
 
     const data = await api.refreshAccessToken()
 
@@ -24,7 +24,7 @@ export async function POST() {
       try {
         const response = await fetch(`https://spotify23.p.rapidapi.com/tracks/?ids=${idTracks}`, {
           headers: {
-            'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPIDAPI_KEY!,
+            'X-RapidAPI-Key': process.env.RAPIDAPI_KEY!,
             'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
           },
         })

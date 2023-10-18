@@ -20,27 +20,27 @@ export default function Home() {
   const t = useTranslations('spotify')
 
   return (
-    <main className="m-[50px] flex flex-col gap-[80px]">
+    <main className="m-[20px] flex flex-col gap-[80px] xl:m-[50px]">
       <Header />
-      <div className="grid w-full grid-cols-4 gap-8 md:grid-rows-5">
+      <div className="grid w-full grid-cols-3 gap-4 xl:grid-cols-4 xl:grid-rows-5 xl:gap-8">
         <ThemesCard />
-        <div className="col-span-2 col-start-2 row-start-1">
+        <div className="col-span-2 xl:col-start-2 xl:row-start-1">
           <SpotifyCard translated_text={t('recently')} />
         </div>
         <LanguagueCard />
         <AboutMe />
         <ProjectsCard />
         <LinkedinCard />
-        <div className="col-start-2 row-start-3 grid max-h-[333px] grid-rows-2 gap-5">
+        <div className="grid max-h-[333px] grid-rows-2 gap-5 xl:col-start-2 xl:row-start-3">
           <EmailCard />
           <MeetCard />
         </div>
         <GitHubCard />
         <WeatherCard />
-        <CertificateCard />
         <ExperienceCard />
         <SkillsCard />
         <FootballCard />
+        <CertificateCard />
       </div>
     </main>
   )

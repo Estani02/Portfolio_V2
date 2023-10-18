@@ -52,7 +52,7 @@ function FootballCard() {
 
   return (
     <div
-      className={`relative col-span-2 row-start-5 cursor-pointer overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30 transition-transform duration-200 ${
+      className={`relative col-span-2 row-start-6 h-full w-full cursor-pointer overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30 transition-transform duration-200 xl:row-start-5 ${
         hoverCard && 'scale-[103%]'
       }`}
       onMouseEnter={handleMouseEnter}

@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'media-4.api-sports.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+      },
     ],
   },
 }

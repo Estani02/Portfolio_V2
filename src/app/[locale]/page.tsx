@@ -14,6 +14,7 @@ import ThemesCard from '@/components/ThemesCard'
 import LanguagueCard from '@/components/LanguagueCard'
 import SkillsCard from '@/components/SkillsCard'
 import FootballCard from '@/components/FootballCard'
+import ExperienceCard from '@/components/ExperienceCard'
 
 export default function Home() {
   const t = useTranslations('spotify')
@@ -23,6 +24,9 @@ export default function Home() {
       <Header />
       <div className="grid w-full grid-cols-4 gap-8 md:grid-rows-5">
         <ThemesCard />
+        <div className="col-span-2 col-start-2 row-start-1">
+          <SpotifyCard translated_text={t('recently')} />
+        </div>
         <LanguagueCard />
         <AboutMe />
         <ProjectsCard />
@@ -32,11 +36,9 @@ export default function Home() {
           <MeetCard />
         </div>
         <GitHubCard />
-        <div className="col-span-2 col-start-2 row-start-1">
-          <SpotifyCard translated_text={t('recently')} />
-        </div>
         <WeatherCard />
         <CertificateCard />
+        <ExperienceCard />
         <SkillsCard />
         <FootballCard />
       </div>

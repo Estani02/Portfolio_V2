@@ -10,9 +10,21 @@ import Image from 'next/image'
 import Clock from '@/components/Weather/Clock'
 import Sun from '@/assets/weatherSun/Sun'
 import Moon from '@/assets/weatherMoon/Moon'
+import { useLocale } from 'next-intl'
 
 function WeatherCard() {
-  const { data, isLoading } = useSWR('/api/weather/es', (url) =>
+  const locale = useLocale()
+
+  function typeoftongue (languague: string) {
+    if(locale === 'es'){
+      return `/api/weather/${languague}`
+    } else if(locale === 'en'){
+      return `/api/weather/${languague}`
+    }
+    return `/api/weather/es`
+  }
+
+  const { data, isLoading } = useSWR(typeoftongue(locale), (url) =>
     axios.post(url).then((res) => res.data as WeatherRoot),
   )
   
@@ -31,14 +43,11 @@ function WeatherCard() {
   }, [data])
 
   return (
-    <>
+    <div className={`col-span-2 col-start-3 row-start-4 w-full rounded-2xl ${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]' : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'}`}>
       {isLoading ? (
-        <div className="col-span-2 col-start-3 row-start-4 w-full rounded-2xl bg-yellow-400">
-          <p>Loading...</p>
-        </div>
+      null
       ) : (
-        <div className={`${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]' : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'} 
-        col-span-2 col-start-3 row-start-4 flex  w-full justify-around overflow-hidden rounded-2xl bg-clip-padding p-6 text-white backdrop-blur-sm flex-row-reverse items-center`}>
+        <div className='flex w-full justify-around overflow-hidden rounded-2xl bg-clip-padding p-6 text-white backdrop-blur-sm flex-row-reverse items-center'>
         {/* <div> */}
           {isDaytime ? <Sun /> : <Moon />}
           <div className="flex flex-col">
@@ -63,7 +72,7 @@ function WeatherCard() {
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
 

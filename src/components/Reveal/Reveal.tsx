@@ -22,7 +22,7 @@ function Reveal({ content }: { content: string }) {
   return (
     <span ref={elementRef} className={styles.reveal + ' ' + (isIntersecting ? styles.loaded : '')}>
       <div className={styles.cover} style={{ backgroundColor: COLOR_LIST[getRandomNumber()] }} />
-      <p className={`${styles.text} text-black dark:text-white`}>{content}</p>
+      <p className={`${styles.text} dark:text-white`}>{content}</p>
     </span>
   )
 }

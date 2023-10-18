@@ -22,7 +22,7 @@ export default function SpotifyCard({ translated_text }: { translated_text: stri
     <section className="relative flex h-fit w-full max-w-md justify-center overflow-hidden rounded-2xl text-[#ffffff77] shadow-2xl shadow-white/30 backdrop-blur-sm md:max-w-lg md:flex-col">
       <Image
         alt={data?.name || 'Song coverpage'}
-        className="absolute -z-50 h-full w-full object-cover brightness-[.20]"
+        className="absolute -z-50 h-full w-full object-cover brightness-[.40] dark:brightness-[.20]"
         draggable="false"
         height={150}
         loading="lazy"

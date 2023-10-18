@@ -31,7 +31,10 @@ export default function RootLayout({
 
   return (
     <html lang={locale}>
-      <body suppressHydrationWarning className={`${font.className} dark:bg-black dark:text-white`}>
+      <body
+        suppressHydrationWarning
+        className={`${font.className} text-blue-900 dark:bg-black dark:text-white`}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>

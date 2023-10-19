@@ -7,6 +7,8 @@ import { useLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { Roboto } from 'next/font/google'
 
+import Background from '@/components/background/Background'
+
 import Providers from '../providers'
 
 const font = Roboto({ weight: '400', subsets: ['latin'] })
@@ -31,12 +33,12 @@ export default function RootLayout({
 
   return (
     <html lang={locale}>
-      <body
-        suppressHydrationWarning
-        className={`${font.className} text-blue-900 dark:bg-black dark:text-white`}
-      >
-        <Providers>{children}</Providers>
-      </body>
+      <Providers>
+        <body suppressHydrationWarning className={`${font.className} text-white dark:bg-black`}>
+          <Background />
+          {children}
+        </body>
+      </Providers>
     </html>
   )
 }

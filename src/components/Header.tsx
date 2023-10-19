@@ -13,10 +13,10 @@ function Header() {
   return (
     <header className="flex h-[100vh] flex-col justify-center font-bold">
       <div className="flex flex-col items-center justify-between md:flex-row">
-        <div className="flex flex-col items-center gap-4 text-[2rem] capitalize md:items-start md:text-[2.5rem] lg:text-[5rem]">
+        <h1 className="flex flex-col items-center gap-4 text-[2rem] capitalize md:items-start md:text-[2.5rem] lg:text-[5rem]">
           <Reveal content="Estanislao Olmedo" />
           <Reveal content={t('positon')} />
-        </div>
+        </h1>
         <DeskAnimation />
       </div>
       <ScrollArrow />

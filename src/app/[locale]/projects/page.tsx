@@ -62,9 +62,9 @@ function Page() {
       transition={{ duration: 1 }}
     >
       <header className="relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-tl from-[#cc2b5e]/30 to-[#753a88]/30 p-10 shadow-2xl shadow-[#cc2b5e]/30">
-        <Link className="absolute left-1" href="/">
-          <KeyboardBackspaceIcon className="w-full max-w-[6.4rem] text-[#ffffff77]" />
-        </Link>
+        {/* <Link className="absolute left-1" href="/"> */}
+        <KeyboardBackspaceIcon className="h-[4rem] w-full max-w-[6.4rem] text-[#ffffff77]" />
+        {/* </Link> */}
         <h3 className="text-2xl font-bold uppercase md:text-4xl">
           {local === 'es' ? 'Proyectos' : local === 'en' ? 'Projects' : 'Projetos'}
         </h3>

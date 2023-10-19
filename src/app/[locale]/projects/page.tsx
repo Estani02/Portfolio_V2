@@ -62,8 +62,8 @@ function Page() {
       transition={{ duration: 1 }}
     >
       <header className="relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-tl from-[#cc2b5e]/30 to-[#753a88]/30 p-10 shadow-2xl shadow-[#cc2b5e]/30">
-        <Link className="absolute left-1 h-[3rem] w-full max-w-[6.4rem] md:h-[6.4rem]" href="/">
-          <KeyboardBackspaceIcon className="h-full w-full text-[#ffffff77]" />
+        <Link className="absolute left-1" href="/">
+          <KeyboardBackspaceIcon className="w-full max-w-[6.4rem] text-[#ffffff77]" />
         </Link>
         <h3 className="text-2xl font-bold uppercase md:text-4xl">
           {local === 'es' ? 'Proyectos' : local === 'en' ? 'Projects' : 'Projetos'}
@@ -132,7 +132,7 @@ function Page() {
                   className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
                   href={e.github}
                 >
-                  <GitHub className="h-[2rem] w-full max-w-[2rem] text-[#ffffff77]" />
+                  <GitHub className="w-full max-w-[2rem] text-[#ffffff77]" />
                 </Link>
                 <h5>{e.name}</h5>
                 <Link
@@ -141,7 +141,7 @@ function Page() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <OpenInNewIcon className="h-[2rem] w-full max-w-[2rem] text-[#ffffff77]" />
+                  <OpenInNewIcon className="w-full max-w-[2rem] text-[#ffffff77]" />
                 </Link>
               </div>
             </motion.div>

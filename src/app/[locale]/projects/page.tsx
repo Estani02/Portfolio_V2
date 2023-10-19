@@ -69,7 +69,7 @@ function Page() {
           {local === 'es' ? 'Proyectos' : local === 'en' ? 'Projects' : 'Projetos'}
         </h3>
       </header>
-      <div className="grid h-[70vh] w-full grid-cols-1 justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid h-[70vh] w-full grid-cols-1 justify-items-center gap-10 md:h-auto md:grid-cols-2 xl:grid-cols-3">
         {isLoading ? (
           <>
             <div className="relative flex aspect-square items-center justify-center xl:col-span-1">

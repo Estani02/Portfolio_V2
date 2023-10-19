@@ -15,7 +15,8 @@ const font = Roboto({ weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Estani Olmedo',
-  description: 'My Website',
+  description:
+    'Estanislao Olmedo, diseñador y desarrollador web creativo con experiencia en la creación de sitios web a medida y soluciones digitales excepcionales. Explora mi portfolio para ver ejemplos de diseños innovadores y funcionalidad de alto rendimiento. Colabora conmigo en tu próximo proyecto web. ¡Contáctame hoy y lleva tus ideas al siguiente nivel en línea!',
 }
 
 export default function RootLayout({
@@ -33,12 +34,12 @@ export default function RootLayout({
 
   return (
     <html lang={locale}>
-      <Providers>
-        <body suppressHydrationWarning className={`${font.className} text-white dark:bg-black`}>
+      <body suppressHydrationWarning className={`${font.className} text-white dark:bg-black`}>
+        <Providers>
           <Background />
           {children}
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   )
 }

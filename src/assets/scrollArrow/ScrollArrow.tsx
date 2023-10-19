@@ -4,11 +4,11 @@ import s from './ScrollArrow.module.css'
 
 function ScrollArrow() {
   return (
-    <div className={s.container}>
+    <a className={s.container} href="#about">
       <div className={s.chevron} />
       <div className={s.chevron} />
       <div className={s.chevron} />
-    </div>
+    </a>
   )
 }
 

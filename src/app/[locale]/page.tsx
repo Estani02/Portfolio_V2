@@ -23,7 +23,10 @@ export default function Home() {
   return (
     <main className="m-[20px] flex flex-col gap-[80px] xl:m-[50px]">
       <Header />
-      <div className="grid w-full grid-cols-3 gap-4 xl:grid-cols-4 xl:grid-rows-5 xl:gap-8">
+      <div
+        className="grid w-full grid-cols-3 gap-4 xl:grid-cols-4 xl:grid-rows-5 xl:gap-8"
+        id="about"
+      >
         <ThemesCard />
         <div className="col-span-2 xl:col-start-2 xl:row-start-1">
           <SpotifyCard translated_text={t('recently')} />
@@ -40,9 +43,9 @@ export default function Home() {
         <WeatherCard />
         <ExperienceCard />
         <SkillsCard />
-        <FootballCard
+        {/* <FootballCard
           translated_text={{ last_match: t2('last_match'), next_match: t2('next_match') }}
-        />
+        /> */}
         <CertificateCard />
       </div>
     </main>

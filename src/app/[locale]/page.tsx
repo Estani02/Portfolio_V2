@@ -28,7 +28,7 @@ export default function Home() {
         id="about"
       >
         <ThemesCard />
-        <div className="col-span-2 xl:col-start-2 xl:row-start-1">
+        <div className="col-span-2 flex items-end justify-center xl:col-start-2 xl:row-start-1">
           <SpotifyCard translated_text={t('recently')} />
         </div>
         <LanguagueCard />
@@ -43,9 +43,9 @@ export default function Home() {
         <WeatherCard />
         <ExperienceCard />
         <SkillsCard />
-        {/* <FootballCard
+        <FootballCard
           translated_text={{ last_match: t2('last_match'), next_match: t2('next_match') }}
-        /> */}
+        />
         <CertificateCard />
       </div>
     </main>

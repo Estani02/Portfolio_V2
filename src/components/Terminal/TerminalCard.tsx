@@ -1,10 +1,18 @@
 import React from 'react'
+import { Inconsolata } from 'next/font/google'
 
 import s from './TerminalCard.module.css'
 
+const inco = Inconsolata({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 function TerminalCard() {
   return (
-    <div className={s.container}>
+    <div
+      className={`${s.container} ${inco.className} col-start-2 row-start-[8] sm:hidden xl:col-start-auto xl:row-start-auto xl:block`}
+    >
       <div className={s.container_terminal} />
       <div className={s.terminal_toolbar}>
         <div className={s.butt}>
@@ -14,12 +22,29 @@ function TerminalCard() {
         </div>
         <p className={s.user}>estaniolmedo@admin: ~</p>
       </div>
-      <div className={s.terminal_body}>
+      <div className={`${s.terminal_body} flex flex-col gap-3`}>
         <div className={s.terminal_promt}>
           <span className={s.terminal_user}>estaniolmedo@admin:</span>
           <span className={s.terminal_location}>~</span>
           <span className={s.terminal_bling}>$</span>
-          {/* <p className="ml-2" /> */}
+          <p className="ml-1">npm install actitud</p>
+          {/* <span className={s.terminal_cursor} /> */}
+        </div>
+        <div className="ml-1 flex flex-col gap-4">
+          <p>added 1 package and audited 1 package in 1s</p>
+          <div>
+            <p>1 package is looking for funding</p>
+            <p className="ml-2">run `npm fund` for details</p>
+          </div>
+          <p>
+            found <span className="text-[#96EC8E]">0</span> vulnerabilities
+          </p>
+        </div>
+        <div className={`${s.terminal_promt} flex items-center`}>
+          <span className={s.terminal_user}>estaniolmedo@admin:</span>
+          <span className={s.terminal_location}>~</span>
+          <span className={s.terminal_bling}>$</span>
+          {/* <p className="ml-1">npm install actitud</p> */}
           <span className={s.terminal_cursor} />
         </div>
       </div>

@@ -25,7 +25,10 @@
     "title": "ANOS DE EXPERIÊNCIA"
   },
   "football": {
-    "next_match": "Próximo jogo do Talleres",
+    "next_match": "Projeto em produção",
     "last_match": "Último jogo"
+  },
+  "terminal": {
+    "attitude": "atitude"
   }
 }

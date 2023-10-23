@@ -1,5 +1,6 @@
 import React from 'react'
 import { Inconsolata } from 'next/font/google'
+import { useTranslations } from 'next-intl'
 
 import s from './TerminalCard.module.css'
 
@@ -9,6 +10,8 @@ const inco = Inconsolata({
 })
 
 function TerminalCard() {
+  const t = useTranslations('terminal')
+
   return (
     <div
       className={`${s.container} ${inco.className} col-start-2 row-start-[8] hidden xl:col-start-auto xl:row-start-auto xl:block`}
@@ -27,7 +30,7 @@ function TerminalCard() {
           <span className={s.terminal_user}>estaniolmedo@admin:</span>
           <span className={s.terminal_location}>~</span>
           <span className={s.terminal_bling}>$</span>
-          <p className="ml-1">npm install actitud</p>
+          <p className="ml-1">npm install {t('attitude')}</p>
           {/* <span className={s.terminal_cursor} /> */}
         </div>
         <div className="ml-1 flex flex-col gap-4">

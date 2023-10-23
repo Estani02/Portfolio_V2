@@ -84,6 +84,9 @@ function Page() {
             <div className="relative flex aspect-square items-center justify-center xl:col-span-1 xl:mt-[300px]">
               <LoaderProjects />
             </div>
+            <div className="relative flex aspect-square items-center justify-center xl:col-span-1 xl:mt-[300px]">
+              <LoaderProjects />
+            </div>
           </>
         ) : (
           data?.map((e: ProjectsApi, index: number) => (

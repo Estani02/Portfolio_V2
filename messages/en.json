@@ -25,7 +25,10 @@
     "title": "YEARS OF EXPERIENCE"
   },
   "football": {
-    "next_match": "Next Talleres match",
+    "next_match": "Project in production",
     "last_match": "Last match"
+  },
+  "terminal": {
+    "attitude": "attitude"
   }
 }

@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bienvenidos a Mi Mundo Creativo
 
-## Getting Started
+¡Hola a todos! Me complace darles la bienvenida a mi portafolio personal, un lugar donde la creatividad se une con la tecnología. Aquí encontrarás una ventana a mi vida y a mis pasiones. Permíteme mostrarte lo que te espera:
 
-First, run the development server:
+## 🌎 Explora Mi Rincón Personal
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- 📌 **Ubicación:** Aquí, podrás adentrarte en mi entorno, conocer detalles de mi hora local en tiempo real y obtener información sobre la temperatura actual.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🎶 **Música:** Descubre las canciones que me han inspirado recientemente en Spotify. La música es una parte fundamental de mi vida y espero que encuentres algo que te guste.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 💼 **Proyectos:** Mi portafolio alberga una colección de proyectos emocionantes en los que he trabajado. Cada uno cuenta una historia única y demuestra mi pasión por la creatividad y la innovación.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- 🚀 **Próximos Pasos:** Estoy emocionado por lo que depara el futuro. Echa un vistazo a mis próximos proyectos y descubre hacia dónde me dirijo.
 
-## Learn More
+- 📚 **Experiencia y Educación:** Obtén información sobre mi experiencia en diferentes tecnologías y mi formación académica. 
 
-To learn more about Next.js, take a look at the following resources:
+## 🌙 Modo de Visualización
+Puedes explorar mi portafolio en dos modos de visualización diferentes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 🌙 **Modo Nocturno:** Si prefieres un aspecto más oscuro y elegante, el modo nocturno está diseñado para ti.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 🌞 **Modo Claro:** Para aquellos que disfrutan de un diseño más luminoso y fresco, el modo claro te ofrecerá una experiencia brillante.
 
-## Deploy on Vercel
+## 🌐 Idiomas Disponibles
+Mi portafolio está disponible en tres idiomas diferentes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🇺🇸 **Inglés**
+- 🇪🇸 **Español**
+- 🇵🇹 **Portugués**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Gracias por visitar mi portafolio creativo. Espero que disfrutes de tu viaje a través de mi mundo. ¡Hablemos pronto! 😊

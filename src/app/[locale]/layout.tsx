@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   authors: [{ name: 'Estanislao Olmedo', url: 'https://estaniolmedo.vercel.app/' }],
   robots: 'index, follow',
   openGraph: {
-    title: 'Solaz club',
+    title: 'Estanislao Olmedo',
     description:
-      'Estanislao Olmedo, diseñador y desarrollador web creativo con experiencia en la creación de sitios web a medida y soluciones digitales excepcionales.',
+      'Diseñador y desarrollador web creativo con experiencia en la creación de sitios web a medida y soluciones digitales excepcionales.',
     images: [
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-7aed7.appspot.com/o/foto_perfil.png?alt=media&token=fac9df64-e8cd-46b5-9f32-27e739c55949&_gl=1*1aplot9*_ga*MzE4Mzk4MTgzLjE2OTY5NTgyNDc.*_ga_CW55HF8NVT*MTY5ODA2Njk4Mi42LjEuMTY5ODA2NzA3Ni41OC4wLjA.',
+        url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-7aed7.appspot.com/o/code.png?alt=media&token=fc06b160-3a2a-4561-b263-4c5955ad5b59&_gl=1*t14pq5*_ga*MzE4Mzk4MTgzLjE2OTY5NTgyNDc.*_ga_CW55HF8NVT*MTY5ODA2Njk4Mi42LjEuMTY5ODA2NzgzMS41Mi4wLjA.',
       },
     ],
     url: 'https://estaniolmedo.vercel.app/',

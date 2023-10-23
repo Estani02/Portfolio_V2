@@ -14,6 +14,8 @@
 
 - 📚 **Experiencia y Educación:** Obtén información sobre mi experiencia en diferentes tecnologías y mi formación académica. 
 
+- 📱 **Responsive:** Mi portafolio está diseñado para ser completamente responsive, lo que significa que se adapta perfectamente a diferentes dispositivos y tamaños de pantalla.
+
 ## 🌙 Modo de Visualización
 Puedes explorar mi portafolio en dos modos de visualización diferentes:
 

@@ -43,7 +43,7 @@ function WeatherCard() {
   }, [data])
 
   return (
-    <div className={`col-start-1 row-start-4 sm:row-start-[8] sm:col-span-2 xl:col-start-3 xl:row-start-4 w-full rounded-2xl ${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]' : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'}`}>
+    <div className={`col-start-1 row-start-4 md:row-start-[8] md:col-span-2 xl:col-start-3 xl:row-start-4 w-full rounded-2xl ${isDaytime ? 'bg-gradient-to-tr from-[#66aee2] to-[#039be5]/40 shadow-2xl shadow-[#66aee2]' : 'bg-gradient-to-tr from-[#374387] to-[#040f2d] shadow-2xl shadow-[#374387]'}`}>
       {isLoading ? (
       null
       ) : (

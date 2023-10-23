@@ -43,7 +43,7 @@ function CertificateCard() {
   return (
     <Link
       aria-label="Certificado"
-      className="relative col-start-3 row-start-[8] flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-2 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:max-w-lg md:p-5 xl:col-start-4 xl:row-start-5"
+      className="relative col-span-2 col-start-2 row-start-[8] flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-2 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:col-span-1 md:max-w-lg md:p-5 xl:col-start-4 xl:row-start-5"
       href="https://certificates.soyhenry.com/new-cert?id=5e82bb1f0e32c3860281fabc7393aa0fea2aa5a4e528ee7ca697fb838b5126b8"
       rel="noopener noreferrer"
       target="_blank"
@@ -54,7 +54,7 @@ function CertificateCard() {
         alt="Programador Certificado"
         className={`${
           hoverCard && 'bottom-[0%] md:bottom-[-8%]'
-        } absolute bottom-[-50%] min-w-[150px] transition-all duration-300 md:bottom-[-40%]`}
+        } absolute bottom-[-80%] min-w-[150px] transition-all duration-300 md:bottom-[-40%]`}
         src={henry}
       />
       <div className="mt-8 text-center sm:mt-1 md:mt-14">

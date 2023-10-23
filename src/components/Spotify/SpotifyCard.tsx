@@ -32,7 +32,7 @@ export default function SpotifyCard({ translated_text }: { translated_text: stri
       <div className="flex gap-2 px-2 py-3 md:p-4 md:pb-6">
         <Image
           alt={data?.name || 'Song coverpage'}
-          className="h-[100px] w-[100px] object-cover md:h-[150px] md:w-[150px]"
+          className="h-[80px] w-[80px] object-cover md:h-[150px] md:w-[150px]"
           draggable="false"
           height={150}
           loading="lazy"
@@ -40,7 +40,7 @@ export default function SpotifyCard({ translated_text }: { translated_text: stri
           width={150}
         />
         <div className="flex flex-col">
-          <p className="text-base font-bold md:text-lg">{translated_text}</p>
+          <p className="text-xs font-bold md:text-lg">{translated_text}</p>
           <Marquee link={data?.external_urls.spotify} loading={isLoading} text={data?.name} />
           <p className={`text-xs md:text-sm ${isLoading && 'text-transparent'}`}>
             {isLoading ? 'Loading..' : data?.artists[0].name}

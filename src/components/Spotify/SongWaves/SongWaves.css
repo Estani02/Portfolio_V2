@@ -23,7 +23,7 @@
   width: 4px;
   border-radius: 10px;
   background: #ffffffaf;
-  margin: 0 6px;
+  margin: 0 3px;
   padding: 0;
   animation-name: wave1;
   animation-duration: 0.3s;
@@ -108,5 +108,6 @@
 @media (min-width: 768px) {
   .wave-menu li{
     height: 20px;
+    margin: 0 6px;
   }
 }

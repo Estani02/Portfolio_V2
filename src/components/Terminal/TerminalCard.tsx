@@ -11,7 +11,7 @@ const inco = Inconsolata({
 function TerminalCard() {
   return (
     <div
-      className={`${s.container} ${inco.className} col-start-2 row-start-[8] sm:hidden xl:col-start-auto xl:row-start-auto xl:block`}
+      className={`${s.container} ${inco.className} col-start-2 row-start-[8] hidden xl:col-start-auto xl:row-start-auto xl:block`}
     >
       <div className={s.container_terminal} />
       <div className={s.terminal_toolbar}>

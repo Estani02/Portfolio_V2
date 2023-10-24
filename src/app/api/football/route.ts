@@ -111,6 +111,10 @@ export async function POST() {
       process.env.FOOTBALL_KEY_1!,
       process.env.FOOTBALL_KEY_2!,
       process.env.FOOTBALL_KEY_3!,
+      process.env.FOOTBALL_KEY_4!,
+      process.env.FOOTBALL_KEY_5!,
+      process.env.FOOTBALL_KEY_6!,
+      process.env.FOOTBALL_KEY_7!,
     ]
     const matches = await getInfo(apiKeys)
 

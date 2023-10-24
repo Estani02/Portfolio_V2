@@ -22,7 +22,8 @@ export default function Home() {
   const t2 = useTranslations('football')
 
   return (
-    <main className="m-[20px] flex flex-col gap-[80px] xl:m-[50px]">
+    <main className="relative m-[20px] flex flex-col gap-[80px] xl:m-[50px]">
+      <p className="absolute right-0 top-0 text-xs text-[#ffffff77] md:text-sm">BETA</p>
       <Header />
       <div
         className="grid w-full grid-cols-3 gap-4 xl:grid-cols-4 xl:grid-rows-5 xl:gap-8"

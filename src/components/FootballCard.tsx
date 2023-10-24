@@ -67,13 +67,13 @@ function FootballCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Image
-        alt="Escudo de Talleres, equipo de Estanislao"
-        className="absolute -z-20 h-full w-full object-cover brightness-[.32]"
-        src={bg}
-      />
       {data ? (
         <>
+          <Image
+            alt="Escudo de Talleres, equipo de Estanislao"
+            className="absolute -z-20 h-full w-full object-cover brightness-[.32]"
+            src={bg}
+          />
           <Image
             alt="Talleres, equipo de Estanislao"
             className={`absolute -right-28 bottom-0 -z-10 h-[60%] w-[60%] object-cover brightness-[.77] transition-transform duration-200 ${
@@ -179,7 +179,13 @@ function FootballCard({
             </div>
           </div>
         </>
-      ) : null}
+      ) : (
+        <Image
+          alt="En producción"
+          className="absolute -z-20 h-full w-full object-cover"
+          src={mario}
+        />
+      )}
     </div>
   )
 }

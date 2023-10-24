@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import EastIcon from '@mui/icons-material/East'
+import { BsArrowRightShort } from 'react-icons/bs'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 
@@ -24,7 +24,7 @@ function ProjectsCard() {
         <div className="flex flex-1 flex-col justify-end gap-4">
           <div className="flex w-full items-center justify-between">
             <p className="text-lg font-bold capitalize xl:text-3xl">{t('title')}</p>
-            <EastIcon className="h-4 w-4 text-[#ffffff77] md:h-6 md:w-6" />
+            <BsArrowRightShort className="h-4 w-4 text-[#ffffff77] md:h-6 md:w-6" />
           </div>
           <div className="text-xs md:text-sm xl:text-base">
             <p>{t('p_1')}</p>

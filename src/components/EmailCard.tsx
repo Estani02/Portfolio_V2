@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import { MdOpenInNew } from 'react-icons/md'
 
 import GmailIcon from '@/assets/svgs/GmailIcon'
 
@@ -15,7 +15,7 @@ function EmailCard() {
       title="estaniolmedo@gmail.com"
     >
       <GmailIcon className="h-[293px] w-full max-w-[293px]" />
-      <OpenInNewIcon className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
+      <MdOpenInNew className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
     </Link>
   )
 }

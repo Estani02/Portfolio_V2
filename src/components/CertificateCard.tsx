@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import { MdOpenInNew } from 'react-icons/md'
 import confetti from 'canvas-confetti'
 
 import henry from '@/assets/images/mockups_henry.png'
@@ -61,7 +61,7 @@ function CertificateCard() {
         <p className="relative z-50 text-xl font-bold md:text-2xl">Full Stack Developer</p>
         <p className="text-xs text-[#ffffff77] md:text-lg">Soy Henry - 2023</p>
       </div>
-      <OpenInNewIcon className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
+      <MdOpenInNew className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
     </Link>
   )
 }

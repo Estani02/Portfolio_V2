@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew'
+import { MdOpenInNew } from 'react-icons/md'
 
 import LinkedinIcon from '@/assets/svgs/LinkedinIcon'
 
@@ -14,7 +14,7 @@ function LinkedinCard() {
       target="_blank"
     >
       <LinkedinIcon className="h-full w-full" />
-      <OpenInNewIcon className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
+      <MdOpenInNew className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />
     </Link>
   )
 }

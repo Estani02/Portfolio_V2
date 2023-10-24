@@ -25,7 +25,7 @@ export const metadata: Metadata = {
       'Diseñador y desarrollador web creativo con experiencia en la creación de sitios web a medida y soluciones digitales excepcionales.',
     images: [
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-7aed7.appspot.com/o/code.png?alt=media&token=fc06b160-3a2a-4561-b263-4c5955ad5b59&_gl=1*t14pq5*_ga*MzE4Mzk4MTgzLjE2OTY5NTgyNDc.*_ga_CW55HF8NVT*MTY5ODA2Njk4Mi42LjEuMTY5ODA2NzgzMS41Mi4wLjA.',
+        url: 'https://user-images.githubusercontent.com/74038190/212259468-9e0679b0-d909-41f0-9ed2-80ca3d51ce90.png',
       },
     ],
     url: 'https://estaniolmedo.vercel.app/',

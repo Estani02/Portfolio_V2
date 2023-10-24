@@ -1,11 +1,15 @@
 .marqueeContainer {
   width: 30%;
-  min-width: 180px;
+  min-width: 100px;
   height: fit-content;
   overflow: hidden;
   display: flex;
   font-weight: bold;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   box-sizing: border-box;
 }
 
@@ -20,6 +24,20 @@
   animation: extramarquee 35s infinite ;
   box-sizing: border-box;
 }
+
+@media (min-width: 640px) {
+  .marqueeContainer {
+    min-width: 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .marqueeContainer {
+    min-width: 180px;
+    justify-content: center;
+  }
+}
+
 
 @keyframes marquee {
   0%, 100% {

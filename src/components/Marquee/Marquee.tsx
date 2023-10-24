@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useRef, useEffect, useState } from 'react'
 
-import { LoaderSpotify } from '@/assets/LoaderSpotify'
+import Loader from '@/assets/Loader/Loader'
 
 import s from './Marquee.module.css'
 
@@ -49,7 +49,7 @@ export function Marquee({
           rel="noopener"
           target="_blank"
         >
-          {loading ? <LoaderSpotify /> : text}
+          {loading ? <Loader /> : text}
         </a>
       </div>
     </div>

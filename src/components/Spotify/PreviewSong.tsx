@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useState } from 'react'
-import PauseIcon from '@mui/icons-material/Pause'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow'
+import { BsPauseFill } from 'react-icons/bs'
+import { BsPlayFill } from 'react-icons/bs'
 
 import { SongWaves } from './SongWaves/SongWaves'
 
@@ -26,9 +26,9 @@ export function PreviewSong({ song }: { song: string | undefined }) {
         onClick={togglePlay}
       >
         {isPlaying ? (
-          <PauseIcon className="h-4 w-4 text-black md:h-[24px] md:w-[24px]" />
+          <BsPauseFill className="h-4 w-4 text-black md:h-[24px] md:w-[24px]" />
         ) : (
-          <PlayArrowIcon className="h-4 w-4 text-black md:h-[24px] md:w-[24px]" />
+          <BsPlayFill className="h-4 w-4 text-black md:h-[24px] md:w-[24px]" />
         )}
       </button>
       <SongWaves pause={isPlaying} />

@@ -1,11 +1,12 @@
+/* eslint-disable import/order */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 'use client'
 import type { RootFootball } from '@/interfaces/football_api'
 
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import useSWR from 'swr'
 import axios from 'axios'
+import useSWR from 'swr'
 
 import '@/assets/LiveIcon.css'
 
@@ -13,6 +14,7 @@ import { useLocale } from 'next-intl'
 
 import players from '@/assets/images/Talleres-min.png'
 import bg from '@/assets/images/bg_talleres.jpg'
+import mario from '@/assets/images/mario.gif'
 import { updateCountdown } from '@/utils/updateCountdown'
 import { convertDateTime } from '@/utils/convertDateTime'
 
@@ -59,7 +61,7 @@ function FootballCard({
 
   return (
     <div
-      className={`relative col-span-2 row-start-6 h-full w-full cursor-pointer overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30 transition-transform duration-200 xl:row-start-5 ${
+      className={`relative col-span-2 row-start-6 h-full w-full overflow-hidden rounded-2xl text-white shadow-2xl shadow-[#040d2d]/30 transition-transform duration-200 xl:row-start-5 ${
         hoverCard && 'scale-[103%]'
       }`}
       onMouseEnter={handleMouseEnter}
@@ -177,9 +179,7 @@ function FootballCard({
             </div>
           </div>
         </>
-      ) : (
-        <div />
-      )}
+      ) : null}
     </div>
   )
 }

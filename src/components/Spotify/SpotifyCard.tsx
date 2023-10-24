@@ -41,7 +41,9 @@ export default function SpotifyCard({ translated_text }: { translated_text: stri
         />
         <div className="flex flex-col">
           <p className="text-xs font-bold md:text-lg">{translated_text}</p>
-          <Marquee link={data?.external_urls.spotify} loading={isLoading} text={data?.name} />
+          <div className="relative w-full py-3">
+            <Marquee link={data?.external_urls.spotify} loading={isLoading} text={data?.name} />
+          </div>
           <p className={`text-xs md:text-sm ${isLoading && 'text-transparent'}`}>
             {isLoading ? 'Loading..' : data?.artists[0].name}
           </p>

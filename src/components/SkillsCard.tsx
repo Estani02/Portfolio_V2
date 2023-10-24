@@ -19,7 +19,7 @@ function SkillsCard() {
   return (
     <div className="row-start-6 grid h-full grid-cols-4 place-content-center place-items-center gap-1 rounded-2xl bg-gradient-to-tl from-[#cc2b5e]/30 to-[#753a88]/30 p-2 text-center shadow-2xl shadow-[#cc2b5e]/30 md:gap-8 md:p-5 xl:col-start-1 xl:row-start-4 xl:p-8 ">
       <HtmlIcon className="h-10 w-full max-w-[40px]" />
-      <CssIcon className="h-12 w-full max-w-[48px]" />
+      <CssIcon className="h-12 w-full max-w-[49px]" />
       <JavascriptIcon className="h-10 w-full max-w-[40px]" />
       <TypescriptIcon className="h-10 w-full max-w-[40px]" />
       <ReactIcon className="h-10 w-full max-w-[40px]" />

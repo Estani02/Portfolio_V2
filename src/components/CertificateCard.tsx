@@ -53,7 +53,7 @@ function CertificateCard() {
       <Image
         alt="Programador Certificado"
         className={`${
-          hoverCard && 'bottom-[0%] md:bottom-[-8%]'
+          hoverCard && 'bottom-[-70%] sm:bottom-[-50%] xl:bottom-[-8%]'
         } absolute bottom-[-80%] min-w-[150px] transition-all duration-300 md:bottom-[-40%]`}
         src={henry}
       />

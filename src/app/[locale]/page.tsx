@@ -16,6 +16,7 @@ import SkillsCard from '@/components/SkillsCard'
 import FootballCard from '@/components/FootballCard'
 import ExperienceCard from '@/components/ExperienceCard'
 import TerminalCard from '@/components/Terminal/TerminalCard'
+import PositionCard from '@/components/PositionCard'
 
 export default function Home() {
   const t = useTranslations('spotify')
@@ -48,8 +49,9 @@ export default function Home() {
         <FootballCard
           translated_text={{ last_match: t2('last_match'), next_match: t2('next_match') }}
         />
-        <TerminalCard />
+        {/* <TerminalCard /> */}
         <CertificateCard />
+        <PositionCard />
       </div>
     </main>
   )

@@ -43,7 +43,7 @@ function CertificateCard() {
   return (
     <Link
       aria-label="Certificado"
-      className="relative col-span-2 col-start-2 row-start-[8] flex w-full max-w-md justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-2 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:col-span-1 md:max-w-lg md:p-5 xl:col-start-4 xl:row-start-5"
+      className="relative col-start-3 row-start-[8] hidden aspect-square h-full justify-center overflow-hidden rounded-2xl bg-[#0B0D0F] p-2 text-white shadow-2xl shadow-[#FFFF01]/30 transition duration-300 ease-in-out hover:scale-[103%] hover:shadow-[#FFFF01]/50 md:col-span-1 md:flex md:max-w-lg md:p-5 xl:col-start-4 xl:row-start-5"
       href="https://certificates.soyhenry.com/new-cert?id=5e82bb1f0e32c3860281fabc7393aa0fea2aa5a4e528ee7ca697fb838b5126b8"
       rel="noopener noreferrer"
       target="_blank"
@@ -52,13 +52,16 @@ function CertificateCard() {
     >
       <Image
         alt="Programador Certificado"
-        className={`${
-          hoverCard && 'bottom-[-70%] sm:bottom-[-50%] xl:bottom-[-8%]'
-        } absolute bottom-[-80%] min-w-[150px] transition-all duration-300 md:bottom-[-40%]`}
+        // eslint-disable-next-line prettier/prettier
+        className={`${hoverCard && 'bottom-[-70%] sm:bottom-[-50%] xl:bottom-[-8%]'
+          // eslint-disable-next-line prettier/prettier
+          } absolute bottom-[-80%] hidden min-w-[150px] transition-all duration-300 md:bottom-[-40%] md:block`}
         src={henry}
       />
       <div className="mt-8 text-center sm:mt-1 md:mt-14">
-        <p className="relative z-50 text-xl font-bold md:text-2xl">Full Stack Developer</p>
+        <p className="relative z-50 object-cover text-xl font-bold md:text-2xl">
+          Full Stack Developer
+        </p>
         <p className="text-xs text-[#ffffff77] md:text-lg">Soy Henry - 2023</p>
       </div>
       <MdOpenInNew className="absolute right-2 top-2 h-4 w-4 text-[#ffffff77] md:right-5 md:top-5 md:h-6 md:w-6" />

@@ -142,23 +142,25 @@ function Page() {
                 />
               </div>
               <div className="mt-4 flex w-full justify-between text-center font-bold capitalize">
+                <Link
+                  className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
+                  href={e.github}
+                >
+                  <AiFillGithub className="inline-block h-[2rem] w-[2rem] text-[#ffffff77]" />
+                </Link>
+                <h5>{e.name}</h5>
                 {e.url ? (
                   <Link
                     className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
-                    href={e.github}
+                    href={e.url}
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
-                    <AiFillGithub className="inline-block h-[2rem] w-[2rem] text-[#ffffff77]" />
+                    <MdOpenInNew className="inline-block h-[2rem] w-[2rem] text-[#ffffff77]" />
                   </Link>
-                ) : null}
-                <h5>{e.name}</h5>
-                <Link
-                  className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
-                  href={e.url}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <MdOpenInNew className="inline-block h-[2rem] w-[2rem] text-[#ffffff77]" />
-                </Link>
+                ) : (
+                  <div />
+                )}
               </div>
             </motion.div>
           ))

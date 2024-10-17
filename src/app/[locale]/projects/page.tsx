@@ -112,11 +112,9 @@ function Page() {
               )}
               <div className="relative z-10 h-[250px] w-full overflow-hidden">
                 <div
-                  className={`${
-                    isLoaded ? '' : 'relative hidden'
-                  }absolute -bottom-full h-full w-full rounded-2xl bg-black/70 p-5 transition-all duration-300 ${
-                    hoveredCards[index] ? 'bottom-[0%]' : ''
-                  }`}
+                  className={`${isLoaded ? '' : 'relative hidden'
+                    }absolute -bottom-full h-full w-full rounded-2xl bg-black/70 p-5 transition-all duration-300 ${hoveredCards[index] ? 'bottom-[0%]' : ''
+                    }`}
                 >
                   <div className="flex flex-col gap-2">
                     <p className="text-xs">
@@ -144,12 +142,14 @@ function Page() {
                 />
               </div>
               <div className="mt-4 flex w-full justify-between text-center font-bold capitalize">
-                <Link
-                  className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
-                  href={e.github}
-                >
-                  <AiFillGithub className="inline-block h-[2rem] w-[2rem] text-[#ffffff77]" />
-                </Link>
+                {e.url ? (
+                  <Link
+                    className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
+                    href={e.github}
+                  >
+                    <AiFillGithub className="inline-block h-[2rem] w-[2rem] text-[#ffffff77]" />
+                  </Link>
+                ) : null}
                 <h5>{e.name}</h5>
                 <Link
                   className="text-[#ffffff77] transition-transform duration-300 hover:scale-125"
